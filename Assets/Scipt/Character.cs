@@ -6,10 +6,11 @@ public class Character : MonoBehaviour
 {
     private bool isDragged = false;
     private  Room oldRoom;
-    private Stat[] stats;
+    public Stat[] stats;
     private EventData[] possibleEvents;
     private string[] traitList;
     private Transform oldTransform;
+    private Vector3 oldPos;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class Character : MonoBehaviour
         ///Get Data from CharacterData file
     
         ///Get Local Events from EventData file
+
+        oldPos = this.transform.position;
     }
 
 
@@ -63,9 +66,12 @@ public class Character : MonoBehaviour
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mousePos.z));
 
         //Raycast to get the Room's Script;
-        if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask)){
+        if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
+        {
+            //Si le character entre dans une nouvelle room ou si l'ancienne room est set. 
             if (oldRoom != hit.collider.gameObject.GetComponent<Room>() || oldRoom != null){ //Si le joueur drop le character dans une room différente...
-                oldRoom?.RemoveCharacter(this, oldTransform);
+                if (oldRoom != null){ oldRoom?.RemoveCharacter(this, oldTransform);}
+               
                 Room newRoom = hit.collider.gameObject.GetComponent<Room>();
 
                 if (!newRoom.IsRoomFull()){ // Si la nouvelle room n'est pas pleine
@@ -74,12 +80,24 @@ public class Character : MonoBehaviour
                     oldRoom = newRoom;
                 }
                 else{  // Si la nouvelle room est pleine 
-                    this.transform.position = oldTransform.position;
+                    if (oldTransform != null){
+                        this.transform.position = oldTransform.position;
+                    } else
+                    {
+                        this.transform.position = oldPos;
+                    }
+                    
                 }
             } 
             else //Si le joueur drop le character dans la même room ou un endroit vide (pas une room)
             {
-                this.transform.position = oldTransform.position;
+                if (oldTransform != null){
+                        this.transform.position = oldTransform.position;
+                    } else
+                    {
+                        this.transform.position = oldPos;
+                    }
+                    
             }
         } 
     }
