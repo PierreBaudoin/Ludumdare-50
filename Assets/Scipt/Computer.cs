@@ -11,7 +11,7 @@ public class Computer : MonoBehaviour
     public MeshRenderer screenMesh;
 
     private Animator animator;
-
+    private bool isInteracted = false;
 
     private void Start()
     {
@@ -60,5 +60,15 @@ public class Computer : MonoBehaviour
     private void OnMouseUp()
     {
         animator.SetBool("ComputerTurned", false);
+    }
+
+    private void OnMouseOver()
+    {
+        animator.SetBool("MouseOver", true);
+    }
+
+    private void OnMouseExit()
+    {
+        animator.SetBool("MouseOver", false);
     }
 }
