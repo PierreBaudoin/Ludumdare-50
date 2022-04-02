@@ -31,6 +31,11 @@ namespace Modules.Translations.Controllers
         public bool cacheUsedTranslation = true;
 
         /// <summary>
+        /// Spawn the Languague button in the up-right corner
+        /// </summary>
+        public bool debugButton = false;
+
+        /// <summary>
         /// VoidEvent delegate declaration
         /// >/summary>
         public delegate void VoidEvent();
@@ -71,7 +76,10 @@ namespace Modules.Translations.Controllers
 
             DontDestroyOnLoad(this.gameObject);
 
-            Addressables.LoadAssetAsync<GameObject>(this._settings.contants.languageSelectionMenuButton).Completed += OnPrefabLoaded;
+            if(debugButton == true)
+            {
+                Addressables.LoadAssetAsync<GameObject>(this._settings.contants.languageSelectionMenuButton).Completed += OnPrefabLoaded;
+            }
         }
 
         /// <summary>
@@ -81,7 +89,7 @@ namespace Modules.Translations.Controllers
         {
             if(TranslationManager.instance != null)
             {
-                Debug.LogWarning("Multiple TranslationManager in the scene, instance destroyed");
+                Debug.LogWarning("Multiple TranslationManager detected, instance destroyed");
                 Destroy(this);
             }
             else
