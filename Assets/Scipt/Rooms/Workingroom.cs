@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Workingroom : Room
 {
-     
+    public override void UsedRoom(Character character)
+    {
+        
+    }
 }
