@@ -18,22 +18,6 @@ public class Computer : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SetWorking();
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SetNotWorking();
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CharacterLeave();
-        }
-    }
-
     public void SetNotWorking()
     {
         Material mat = materialsNotWorking[Random.Range(0, materialsNotWorking.Length-1)];
