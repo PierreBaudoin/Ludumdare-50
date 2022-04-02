@@ -11,10 +11,10 @@ public class Room : MonoBehaviour
     public GameObject[] toActivateWhenInvisible;
     public GameObject[] toDeactivateWhenInvisible;
 
-    private int actualNumberOfCharacters = 0;
-    private List<Character> charactersInRoom;
-    private List<Transform> availableTransforms;
-    private List<Transform> occupiedTransforms;
+    public int actualNumberOfCharacters = 0;
+    public List<Character> charactersInRoom;
+    public List<Transform> availableTransforms;
+    public List<Transform> occupiedTransforms;
 
     protected virtual void Start()
     {
@@ -72,5 +72,10 @@ public class Room : MonoBehaviour
         charactersInRoom.Remove(character);
         occupiedTransforms.Remove(slotTransform);
         availableTransforms.Add(slotTransform);
+    }
+
+    public virtual void UsedRoom(Character character)
+    {
+
     }
 }
