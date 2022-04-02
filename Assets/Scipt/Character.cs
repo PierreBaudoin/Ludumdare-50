@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     private EventData[] possibleEvents;
     private string[] traitList;
     private Transform oldTransform;
+    private Vector3 oldPos;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class Character : MonoBehaviour
         ///Get Data from CharacterData file
     
         ///Get Local Events from EventData file
+
+        oldPos = this.transform.position;
     }
 
 
@@ -67,9 +70,8 @@ public class Character : MonoBehaviour
         {
             //Si le character entre dans une nouvelle room ou si l'ancienne room est set. 
             if (oldRoom != hit.collider.gameObject.GetComponent<Room>() || oldRoom != null){ //Si le joueur drop le character dans une room différente...
-                print (oldRoom.actualNumberOfCharacters);
-                oldRoom?.RemoveCharacter(this, oldTransform);
-                print (oldRoom.actualNumberOfCharacters);
+                if (oldRoom != null){ oldRoom?.RemoveCharacter(this, oldTransform);}
+               
                 Room newRoom = hit.collider.gameObject.GetComponent<Room>();
 
                 if (!newRoom.IsRoomFull()){ // Si la nouvelle room n'est pas pleine
@@ -78,12 +80,24 @@ public class Character : MonoBehaviour
                     oldRoom = newRoom;
                 }
                 else{  // Si la nouvelle room est pleine 
-                    this.transform.position = oldTransform.position;
+                    if (oldTransform != null){
+                        this.transform.position = oldTransform.position;
+                    } else
+                    {
+                        this.transform.position = oldPos;
+                    }
+                    
                 }
             } 
             else //Si le joueur drop le character dans la même room ou un endroit vide (pas une room)
             {
-                this.transform.position = oldTransform.position;
+                if (oldTransform != null){
+                        this.transform.position = oldTransform.position;
+                    } else
+                    {
+                        this.transform.position = oldPos;
+                    }
+                    
             }
         } 
     }
