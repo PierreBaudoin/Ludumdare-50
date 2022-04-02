@@ -13,7 +13,7 @@ namespace Modules.Translations.Controllers
     /// <summary>
     /// Manage the UI language list 
     /// </summary>
-    public class LanguageSelectionManager : MonoBehaviour
+    public class LanguageSelectionManager : MenuPage
     {
         /// <summary>
         /// OnDestroy Event of Unity Lifecycle 
@@ -70,7 +70,7 @@ namespace Modules.Translations.Controllers
         public void Select(string isoCode)
         {
             TranslationManager.instance.SwapLanguageTo(isoCode);
-            Destroy(this.gameObject);
+            this.Return();
         }
     }
 }

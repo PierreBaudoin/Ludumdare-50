@@ -1,8 +1,8 @@
 {
   "Data": {
-    "Faim": {
-      "key": "Faim",
-      "eng": "Faim",
+    "Hunger": {
+      "key": "Hunger",
+      "eng": "Hunger",
       "fra": "Faim"
     },
     "Fatigue": {
@@ -19,6 +19,61 @@
       "key": "Moral",
       "eng": "Moral",
       "fra": "Moral"
+    },
+    "Yes": {
+      "key": "Yes",
+      "eng": "Yes",
+      "fra": "Oui"
+    },
+    "No": {
+      "key": "No",
+      "eng": "No",
+      "fra": "Non"
+    },
+    "Sure": {
+      "key": "Sure",
+      "eng": "Are you sure",
+      "fra": "Êtes vous sûr ?"
+    },
+    "Play": {
+      "key": "Play",
+      "eng": "Play",
+      "fra": "Jouer"
+    },
+    "Options": {
+      "key": "Options",
+      "eng": "Options",
+      "fra": "Options"
+    },
+    "Leave": {
+      "key": "Leave",
+      "eng": "Leave",
+      "fra": "Quitter"
+    },
+    "Language": {
+      "key": "Language",
+      "eng": "Language",
+      "fra": "Langue"
+    },
+    "dFX": {
+      "key": "dFX",
+      "eng": "Disable effects",
+      "fra": "Désactiver les effets"
+    },
+    "eFX": {
+      "key": "eFX",
+      "eng": "Enable effects",
+      "fra": "Activer les effets"
+    },
+    "Volume": {
+      "key": "Volume",
+      "eng": "Sound volume",
+      "fra": "Volume sonore"
+    },
+    "Return": {
+      "key": "Return",
+      "eng": "Return",
+      "fra": "Retour"
     }
   }
 }
