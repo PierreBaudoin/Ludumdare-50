@@ -68,39 +68,48 @@ public class Character : MonoBehaviour
         //Raycast to get the Room's Script;
         if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
         {
-            //Si le character entre dans une nouvelle room ou si l'ancienne room est set. 
-            if (oldRoom != hit.collider.gameObject.GetComponent<Room>() || oldRoom != null){ //Si le joueur drop le character dans une room différente...
-                if (oldRoom != null){ oldRoom?.RemoveCharacter(this, oldTransform);}
-               
-                Room newRoom = hit.collider.gameObject.GetComponent<Room>();
-
-                if (!newRoom.IsRoomFull()){ // Si la nouvelle room n'est pas pleine
-                    this.oldTransform = newRoom.AddCharacter(this);
-                    this.transform.position = oldTransform.position;
-                    oldRoom = newRoom;
-                }
-                else{  // Si la nouvelle room est pleine 
-                    if (oldTransform != null){
-                        this.transform.position = oldTransform.position;
-                    } else
-                    {
-                        this.transform.position = oldPos;
-                    }
-                    
-                }
-            } 
-            else //Si le joueur drop le character dans la même room ou un endroit vide (pas une room)
-            {
-                if (oldTransform != null){
-                        this.transform.position = oldTransform.position;
-                    } else
-                    {
-                        this.transform.position = oldPos;
-                    }
-                    
+            Room newRoom = hit.transform.gameObject.GetComponent<Room>();
+            //Si même room
+            if (newRoom == oldRoom){
+                StartCoroutine(TravelBack(oldTransform.position));
+                return;
             }
+            //Si room différente
+            if (newRoom != oldRoom){
+                if (!newRoom.IsRoomFull()){ //Et qu'elle n'est pas pleine
+                    if (oldRoom != null) {oldRoom.RemoveCharacter(this, oldTransform);}
+
+                    this.oldTransform = newRoom.AddCharacter(this);
+                    StartCoroutine(TravelBack(oldTransform.position));
+                    oldRoom = newRoom;
+                    return;
+                }
+                else //Si la room est pleine 
+                {
+                    if (oldRoom != null) {oldRoom.RemoveCharacter(this, oldTransform);}
+                    //this.transform.position = oldPos;
+                    StartCoroutine(TravelBack(oldPos));
+                }
+            }
+            
+        } else //Si pas de room 
+        {
+            Debug.LogError("Character is in no room.");
+            if (oldRoom != null) {oldRoom.RemoveCharacter(this, oldTransform);}
+            oldRoom = null;
+            StartCoroutine(TravelBack(hit.point));
         } 
     }
+
+    IEnumerator TravelBack(Vector3 targetPosition){
+        while (Vector3.Distance (this.transform.position, targetPosition) > 0.2f){
+            this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, 20f * Time.deltaTime);
+            yield return null; 
+        }
+        
+   
+    }
+            
 
     //Drag And Drop
     void OnMouseOver()
