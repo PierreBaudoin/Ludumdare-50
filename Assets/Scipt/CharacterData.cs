@@ -19,7 +19,7 @@ public class CharacterData : ScriptableObject
 
 
 [Serializable]
-public struct Stat
+public class Stat
 {
     public string statName;
     public float maxValue;
@@ -28,6 +28,8 @@ public struct Stat
     public float actualValue;
 
     private static float defaultDepressionRate = 1.0f;
+    private bool lockedStat = false;
+
 
     public Stat(string statName, float maxValue)
     {
@@ -35,10 +37,34 @@ public struct Stat
         this.maxValue = maxValue;
         actualValue = maxValue;
         depressionRate = defaultDepressionRate;
+        lockedStat = false;
+    }
+
+    public void LockStat(bool locked)
+    {
+        lockedStat = locked;
+    }
+
+    public bool IsStatLocked()
+    {
+        return lockedStat;
     }
 
     public void Reduce(float amount)
     {
         actualValue -= amount;
+        if (actualValue <= 0)
+        {
+            actualValue = 0;
+        }
+    }
+
+    public void Increase(float amount)
+    {
+        actualValue += amount;
+        if (actualValue > maxValue)
+        {
+            actualValue = maxValue;
+        }
     }
 }
