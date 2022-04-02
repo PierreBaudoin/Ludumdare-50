@@ -11,29 +11,31 @@ public class Room : MonoBehaviour
     public GameObject[] toActivateWhenInvisible;
     public GameObject[] toDeactivateWhenInvisible;
 
-    public int actualNumberOfCharacters = 0;
-    public List<Character> charactersInRoom;
-    public List<Transform> availableTransforms;
-    public List<Transform> occupiedTransforms;
+    public Dictionary<Transform, Character> validPositions;
 
     protected virtual void Start()
     {
+        validPositions = new Dictionary<Transform, Character>();
         foreach (Transform tr in slotsTransform)
         {
-            availableTransforms.Add(tr);
+            validPositions.Add(tr, null);
         }
     }
 
     public bool IsRoomFull()
     {
-        if (actualNumberOfCharacters == numberOfSlots)
+        return GetNumberOfFilledSlots() == numberOfSlots;
+    }
+
+    public int GetNumberOfFilledSlots()
+    {
+        int result = 0;
+        foreach(KeyValuePair<Transform, Character> kv in validPositions)
         {
-            return true;
+            if(kv.Value != null)
+                result ++;
         }
-        else
-        {
-            return false;
-        }
+        return result;
     }
 
     private void SetActiveAll(GameObject[] array, bool value)
@@ -58,20 +60,33 @@ public class Room : MonoBehaviour
 
     public Transform AddCharacter(Character character)
     {
-        actualNumberOfCharacters++;
-        charactersInRoom.Add(character);
-        Transform result = availableTransforms[0];
-        availableTransforms.Remove(result);
-        occupiedTransforms.Add(result);
-        return result;
+        Transform result;
+        if (IsRoomFull())
+            return null;
+        foreach(Transform tr in validPositions.Keys)
+        {
+            if (validPositions[tr] == null)
+            {
+                result = tr;
+                validPositions[tr] = character;
+                return result;
+            }
+        }
+        return null;
     }
 
-    public void RemoveCharacter(Character character, Transform slotTransform)
+    public void RemoveCharacter(Character character)
     {
-        actualNumberOfCharacters--;
-        charactersInRoom.Remove(character);
-        occupiedTransforms.Remove(slotTransform);
-        availableTransforms.Add(slotTransform);
+        Transform bite = null;
+        foreach(Transform tr in validPositions.Keys)
+        {
+            if (validPositions[tr] == character)
+            {
+                bite = tr;
+                break;
+            }
+        }
+        validPositions[bite] = null;
     }
 
     public virtual void UseRoomUpdate(Character character)

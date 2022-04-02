@@ -77,7 +77,7 @@ public class Character : MonoBehaviour
             //Si room différente
             if (newRoom != oldRoom){
                 if (!newRoom.IsRoomFull()){ //Et qu'elle n'est pas pleine
-                    if (oldRoom != null) {oldRoom.RemoveCharacter(this, oldTransform);}
+                    if (oldRoom != null) {oldRoom.RemoveCharacter(this);}
 
                     this.oldTransform = newRoom.AddCharacter(this);
                     StartCoroutine(TravelBack(oldTransform.position));
@@ -86,7 +86,7 @@ public class Character : MonoBehaviour
                 }
                 else //Si la room est pleine 
                 {
-                    if (oldRoom != null) {oldRoom.RemoveCharacter(this, oldTransform);}
+                    if (oldRoom != null) {oldRoom.RemoveCharacter(this);}
                     //this.transform.position = oldPos;
                     StartCoroutine(TravelBack(oldPos));
                 }
@@ -95,7 +95,7 @@ public class Character : MonoBehaviour
         } else //Si pas de room 
         {
             Debug.LogError("Character is in no room.");
-            if (oldRoom != null) {oldRoom.RemoveCharacter(this, oldTransform);}
+            if (oldRoom != null) {oldRoom.RemoveCharacter(this);}
             oldRoom = null;
             StartCoroutine(TravelBack(hit.point));
         } 
