@@ -1,29 +1,24 @@
 {
   "Data": {
-    "yes": {
-      "key": "yes",
-      "eng": "Yes",
-      "fra": "Oui"
+    "Faim": {
+      "key": "Faim",
+      "eng": "Faim",
+      "fra": "Faim"
     },
-    "no": {
-      "key": "no",
-      "eng": "No",
-      "fra": "Non"
+    "Fatigue": {
+      "key": "Fatigue",
+      "eng": "Fatigue",
+      "fra": "Fatigue"
     },
-    "maybe": {
-      "key": "maybe",
-      "eng": "Maybe",
-      "fra": "Peut-être"
+    "Hygiene": {
+      "key": "Hygiene",
+      "eng": "Hygiene",
+      "fra": "Hygiene"
     },
-    "idk": {
-      "key": "idk",
-      "eng": "I don't know",
-      "fra": "Je ne sais pas"
-    },
-    "repeat ": {
-      "key": "repeat",
-      "eng": "Can you repeat the question ?",
-      "fra": "Pouvez-vous répéter la question ?"
+    "Moral": {
+      "key": "Moral",
+      "eng": "Moral",
+      "fra": "Moral"
     }
   }
 }
