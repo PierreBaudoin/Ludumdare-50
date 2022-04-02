@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c640da077bf1147857df907d57d623, type: 3}
+  m_Name: TranslationsSettings
+  m_EditorClassIdentifier: 
+  contants:
+    languageAssetReference:
+      m_AssetGUID: c94ca8a25a0c9fb428481480f246320f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    excelSheetName: Data
+    missingTranslationText: Missing Translation
+    languageSelectionMenuButton:
+      m_AssetGUID: e5b381fb4c277464c9fbc2facf0e75b4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    languageSelectionMenuPrefab:
+      m_AssetGUID: 8593a66f0739942428bb4ecef6c57dfe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  languages:
+  - name: English
+    isoCode: eng
+    isDefault: 1
+    flagSpite: {fileID: 21300000, guid: 1f15db26a12ccb940aa85fb42ea3c77e, type: 3}
+  - name: French
+    isoCode: fra
+    isDefault: 0
+    flagSpite: {fileID: 21300000, guid: 32d040bda7cb584418f81464f51b97c9, type: 3}

@@ -1,0 +1,29 @@
+{
+  "Data": {
+    "yes": {
+      "key": "yes",
+      "eng": "Yes",
+      "fra": "Oui"
+    },
+    "no": {
+      "key": "no",
+      "eng": "No",
+      "fra": "Non"
+    },
+    "maybe": {
+      "key": "maybe",
+      "eng": "Maybe",
+      "fra": "Peut-être"
+    },
+    "idk": {
+      "key": "idk",
+      "eng": "I don't know",
+      "fra": "Je ne sais pas"
+    },
+    "repeat ": {
+      "key": "repeat",
+      "eng": "Can you repeat the question ?",
+      "fra": "Pouvez-vous répéter la question ?"
+    }
+  }
+}
