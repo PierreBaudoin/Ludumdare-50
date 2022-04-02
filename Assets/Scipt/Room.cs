@@ -74,8 +74,31 @@ public class Room : MonoBehaviour
         availableTransforms.Add(slotTransform);
     }
 
-    public virtual void UsedRoom(Character character)
+    public virtual void UseRoomUpdate(Character character)
     {
 
+    }
+
+    public virtual void StartUseRoom(Character character)
+    {
+
+    }
+
+    public virtual void EndUseRoom(Character character)
+    {
+
+    }
+
+    public static Stat GetStat(Stat[] stats, string statName)
+    {
+        foreach(Stat stat in stats)
+        {
+            if (stat.statName == statName)
+            {
+                return stat;
+            }
+        }
+        Debug.LogError("Stat not found!");
+        return null;
     }
 }
