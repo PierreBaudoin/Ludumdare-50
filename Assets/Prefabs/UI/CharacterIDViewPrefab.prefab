@@ -1261,7 +1261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2658610218922773628}
   m_Layer: 5
-  m_Name: Faim
+  m_Name: Hunger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 2516229324818172285}
   - component: {fileID: 7661247140627256929}
   m_Layer: 5
-  m_Name: Faim Slider
+  m_Name: Hunger Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2649,7 @@ GameObject:
   - component: {fileID: 8952458807629077513}
   - component: {fileID: 529097283782532063}
   m_Layer: 5
-  m_Name: Faim Number
+  m_Name: Hunger Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3109,11 +3109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: {fileID: 4971576343453692199}
   description: {fileID: 1463407694196189427}
-  faimText: {fileID: 529097283782532063}
+  hungerText: {fileID: 529097283782532063}
   fatigueText: {fileID: 3166508314309631998}
   hygieneText: {fileID: 2644020170122244808}
   moralText: {fileID: 7705551523205239726}
-  faim: {fileID: 7661247140627256929}
+  hunger: {fileID: 7661247140627256929}
   fatigue: {fileID: 872441717033763233}
   hygiene: {fileID: 1656387552742374790}
   moral: {fileID: 9083814254536689214}

@@ -7,20 +7,20 @@ using TMPro;
 public class CharacterIdViewController : MonoBehaviour
 {
     public TextMeshProUGUI nom, description;
-    public TextMeshProUGUI faimText, fatigueText, hygieneText, moralText;
-    public Slider faim, fatigue, hygiene, moral;
+    public TextMeshProUGUI hungerText, fatigueText, hygieneText, moralText;
+    public Slider hunger, fatigue, hygiene, moral;
     public Image emote;
-    /*
+    
     private Character character;
     
     public void OpenView(Character character)
     {
         this.character = character;
         
-        nom.text = chracter.name;
-        description.text = character.description;
+        /*nom.text = character.name;
+        description.text = character.description;*/
 
-    }*/
+    }
 
     void Update()
     {
@@ -28,14 +28,14 @@ public class CharacterIdViewController : MonoBehaviour
     }
 
     private void UpdateValues(){
-        /*
-        faim.value = character.faim;
-        fatigue.value = character.fatigue;
-        hygiene.value = character.hygiene;
-        moral.value = character.moral;
-        */
+        
+        hunger.value = 17;
+        fatigue.value = 25;
+        hygiene.value = 75;
+        moral.value = 68;
+        
 
-        faimText.text = "" + faim.value;
+        hungerText.text = "" + hunger.value;
         fatigueText.text = "" + fatigue.value;
         hygieneText.text = "" + hygiene.value;
         moralText.text = "" + moral.value;

@@ -47,5 +47,13 @@ namespace Modules.Translations.Controllers
         {
             TranslationManager.instance.OnLanguageChange -= this.OnUpdateText;
         }
+
+        /// <summary>
+        /// Manualy update the text 
+        /// </summary>
+        public void ManualUpdateText()
+        {
+            TranslationManager.instance.OnLanguageChange -= this.OnUpdateText;
+        }
     }
 }
