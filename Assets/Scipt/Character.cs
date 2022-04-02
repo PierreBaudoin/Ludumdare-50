@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     private bool isDragged = false;
     private  Room oldRoom;
-    private Stat[] stats;
+    public Stat[] stats;
     private EventData[] possibleEvents;
     private string[] traitList;
     private Transform oldTransform;
@@ -63,9 +63,13 @@ public class Character : MonoBehaviour
         Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mousePos.z));
 
         //Raycast to get the Room's Script;
-        if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask)){
+        if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
+        {
+            //Si le character entre dans une nouvelle room ou si l'ancienne room est set. 
             if (oldRoom != hit.collider.gameObject.GetComponent<Room>() || oldRoom != null){ //Si le joueur drop le character dans une room différente...
+                print (oldRoom.actualNumberOfCharacters);
                 oldRoom?.RemoveCharacter(this, oldTransform);
+                print (oldRoom.actualNumberOfCharacters);
                 Room newRoom = hit.collider.gameObject.GetComponent<Room>();
 
                 if (!newRoom.IsRoomFull()){ // Si la nouvelle room n'est pas pleine
