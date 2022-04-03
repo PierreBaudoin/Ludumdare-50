@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
+  m_Name: chara5
+  m_EditorClassIdentifier: 
+  characterName: Mohamed
+  description: Boxeur
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: f7be0d03fe7903541b23ebcb5d07e36a, type: 3}
+  stats:
+  - statName: HUNGER
+    maxValue: 100
+    depressionRate: 0.12
+    actualValue: 100
+  - statName: FATIGUE
+    maxValue: 100
+    depressionRate: 0.06
+    actualValue: 100
+  - statName: HYGIENE
+    maxValue: 100
+    depressionRate: 0.0012
+    actualValue: 100
+  - statName: MORAL
+    maxValue: 100
+    depressionRate: 1
+    actualValue: 100
+  traits: []

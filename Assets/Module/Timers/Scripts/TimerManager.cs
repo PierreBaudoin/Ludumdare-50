@@ -8,12 +8,12 @@ public class TimerManager : MonoBehaviour {
 
     void Awake()
     {
-        if(instance != null)
+        if(instance != null && instance != this.gameObject)
         {
             Debug.LogWarning("Multiple TimerManager detected : instance destroyed");
             Destroy(this.gameObject);
         }
-
+        instance = this.gameObject;
         DontDestroyOnLoad(this.gameObject);
     }
 

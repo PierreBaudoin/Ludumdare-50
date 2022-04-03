@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
+  m_Name: chara7
+  m_EditorClassIdentifier: 
+  characterName: Mateo
+  description: Hyperactif
+  postIt: {fileID: 21300000, guid: 8c6e20de654b8f44caf0178d0e0454f2, type: 3}
+  profilePic: {fileID: 21300000, guid: 750317beb301b694283a7f6925aaa443, type: 3}
+  stats:
+  - statName: HUNGER
+    maxValue: 100
+    depressionRate: 0.15
+    actualValue: 100
+  - statName: FATIGUE
+    maxValue: 100
+    depressionRate: 0.07
+    actualValue: 100
+  - statName: HYGIENE
+    maxValue: 100
+    depressionRate: 0.013
+    actualValue: 100
+  - statName: MORAL
+    maxValue: 100
+    depressionRate: 1
+    actualValue: 100
+  traits: []
