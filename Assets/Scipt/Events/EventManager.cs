@@ -10,7 +10,7 @@ public class EventManager : MonoBehaviour
 
 
 
-    private DialogBoxEvent[] dialogBoxEvents;
+    private List<DialogBoxEvent> dialogBoxEvents;
 
 
     void Awake()
@@ -35,7 +35,7 @@ public class EventManager : MonoBehaviour
                 {
                     foreach(TargetEffectPair t in d.targetEffectPairs)
                     {
-                        t.Play(d.useOncePerGame);
+                        t.Play(d.useOncePerGame, c);
                     }
                 }
             }
@@ -46,11 +46,12 @@ public class EventManager : MonoBehaviour
     {
         string[] guids = AssetDatabase.FindAssets("t:"+ typeof(DialogBoxEvent).Name);
         
-        dialogBoxEvents = new DialogBoxEvent[guids.Length];
+        dialogBoxEvents = new List<DialogBoxEvent>();
         for(int i =0;i<guids.Length;i++) 
         {
             string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-            dialogBoxEvents[i] = AssetDatabase.LoadAssetAtPath<DialogBoxEvent>(path);
+            DialogBoxEvent d = AssetDatabase.LoadAssetAtPath<DialogBoxEvent>(path);
+            if(d.useInGame) { dialogBoxEvents.Add(d); }
         }
     }
 }

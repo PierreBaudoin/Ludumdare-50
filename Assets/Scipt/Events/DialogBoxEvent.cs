@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogBoxEvent : ScriptableObject
 {
     public string name;
+    public bool useInGame = true;
     public bool useOncePerGame;
     [Range(0,1)] public float chance = 1f;
     public string textToDisplay;

@@ -41,7 +41,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         ActualizeStats();
-        CheckEvents(possibleEvents);
         if (isDragged){
             Drag();
         }
@@ -137,11 +136,6 @@ public class Character : MonoBehaviour
         }
     }
 #endregion
-    
-    private void CheckEvents(EventData[] events)
-    {
-        Debug.LogWarning("Not implemented yet");
-    }
 
     private void ActualizeStats()
     {
