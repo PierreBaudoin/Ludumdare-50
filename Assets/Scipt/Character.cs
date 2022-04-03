@@ -13,10 +13,13 @@ public class Character : MonoBehaviour
     private EventData[] possibleEvents;
     private string[] traitList;
 
-    // Start is called before the first frame update
     void Start()
     {
         stats = GetStats();
+        foreach(Stat s in stats)
+        {
+            s.actualValue = s.maxValue;
+        }
         GameManager.instance.characters.Add(this);
     }
 
@@ -43,7 +46,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         ActualizeStats();
-        CheckEvents(possibleEvents);
         if (isDragged){
             Drag();
         }
@@ -139,11 +141,6 @@ public class Character : MonoBehaviour
         }
     }
 #endregion
-    
-    private void CheckEvents(EventData[] events)
-    {
-        Debug.LogWarning("Not implemented yet");
-    }
 
     private void ActualizeStats()
     {

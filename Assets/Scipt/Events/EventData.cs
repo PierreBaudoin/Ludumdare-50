@@ -17,27 +17,3 @@ public class EventData : ScriptableObject
 
     public EventType type = EventType.Local;
 }
-
-[Serializable]
-public class TargetEffectPair
-{
-    public Effect[] effects;
-    private bool used = false;
-    public enum TargetingRule
-    {
-        ThisCharacter, AdjacentCharacter, RandomCharacter
-    }
-    public TargetingRule targetingRule;
-    public void Play(bool useOnce)
-    {
-        if(useOnce == false || used == false)
-        {
-            used = true;
-            foreach(Effect e in effects)
-            {
-                e.Play();
-            }
-        }
-    }
-}
-
