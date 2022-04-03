@@ -68,7 +68,7 @@ public class Character : MonoBehaviour
         //Raycast to get the Room's Script;
         if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
         {
-            Room newRoom = hit.transform.gameObject.GetComponent<Room>();
+            Room newRoom = hit.transform.gameObject.GetComponentInParent<Room>();
             //Si même room
             if (newRoom == oldRoom){
                 StartCoroutine(TravelBack(oldTransform.position));
@@ -77,18 +77,19 @@ public class Character : MonoBehaviour
             //Si room différente
             if (newRoom != oldRoom){
                 if (!newRoom.IsRoomFull()){ //Et qu'elle n'est pas pleine
-                    if (oldRoom != null) {oldRoom.RemoveCharacter(this);}
-
+                    if (oldRoom != null)
+                    {
+                        oldRoom.RemoveCharacter(this);
+                    }
+                    
                     this.oldTransform = newRoom.AddCharacter(this);
                     StartCoroutine(TravelBack(oldTransform.position));
                     oldRoom = newRoom;
                     return;
                 }
                 else //Si la room est pleine 
-                {
-                    if (oldRoom != null) {oldRoom.RemoveCharacter(this);}
-                    //this.transform.position = oldPos;
-                    StartCoroutine(TravelBack(oldPos));
+                {   
+                    StartCoroutine(TravelBack(oldTransform.position));
                 }
             }
             

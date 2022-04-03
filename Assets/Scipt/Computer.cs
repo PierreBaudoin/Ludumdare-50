@@ -24,6 +24,22 @@ public class Computer : MonoBehaviour
         screenMesh.material = mat;
     }
 
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.A))
+        {
+            SetWorking();
+        }
+        if (Input.GetKey(KeyCode.B))
+        {
+            SetNotWorking();
+        }
+        if(Input.GetKey(KeyCode.C))
+        {
+            CharacterLeave();
+        }
+    }
+
     public void SetWorking()
     {
         Material mat = materialsWorkInProgress[Random.Range(0, materialsNotWorking.Length - 1)];

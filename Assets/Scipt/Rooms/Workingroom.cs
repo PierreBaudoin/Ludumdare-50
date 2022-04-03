@@ -55,12 +55,12 @@ public class Workingroom : Room
 
         b.gameObject.SetActive(true);
         
-        if(characterindex >= charactersInRoom.Count)
+        if(characterindex >= GetNumberOfFilledSlots())
         {
             characterindex = 0;
         }
         
-        b.Init(charactersInRoom[characterindex].transform.position, this);
+        b.Init(slotsTransform[0].position, this);
         characterindex ++;
         
         return b;

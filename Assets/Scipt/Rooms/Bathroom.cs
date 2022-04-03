@@ -8,22 +8,27 @@ public class Bathroom : Room
     public string statName = "HYGIENE";
     public float boostRate = 5.0f;
 
-    private Stat savedStat;
+    private Dictionary<Character, Stat> dictionary;
 
     public override void StartUseRoom(Character character)
     {
-        base.StartUseRoom(character);
-        savedStat = GetStat(character.stats, statName);
-        savedStat.LockStat(true);
+        Stat var = GetStat(character.stats, statName);
+        var.LockStat(true);
+        dictionary.Add(character, var);
     }
 
     public override void UseRoomUpdate(Character character)
     {
-        savedStat.Increase(boostRate * Time.deltaTime);
+        Stat var;
+        dictionary.TryGetValue(character, out var);
+        var.Increase(boostRate * Time.deltaTime);
     }
 
     public override void EndUseRoom(Character character)
     {
-        savedStat.LockStat(false);
+        Stat var;
+        dictionary.TryGetValue(character, out var);
+        var.LockStat(false);
+        dictionary.Remove(character);
     }
 }
