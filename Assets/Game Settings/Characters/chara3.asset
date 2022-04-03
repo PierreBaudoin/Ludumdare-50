@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
   m_Name: chara3
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Gui
   description: 
   model: {fileID: 0}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.01
+    actualValue: 99.46591
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.09
+    actualValue: 95.17557
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.07
+    actualValue: 96.24767
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 100
+    actualValue: 46.39169
   traits: []

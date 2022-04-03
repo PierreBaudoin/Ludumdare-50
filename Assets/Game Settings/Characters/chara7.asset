@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
   m_Name: chara7
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Mateo
   description: 
   model: {fileID: 0}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 1
+    depressionRate: 0.15
     actualValue: 100
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 1
+    depressionRate: 0.07
     actualValue: 100
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 1
+    depressionRate: 0.013
     actualValue: 100
   - statName: MORAL
     maxValue: 100
