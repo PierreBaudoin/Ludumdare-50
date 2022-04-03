@@ -15,7 +15,7 @@ public class SoundManager2D : MonoBehaviour
 
     private void Awake()
     {
-        if (instance = null)
+        if (instance == null)
         {
             instance = this;
         } else if (instance !=this)

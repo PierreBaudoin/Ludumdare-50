@@ -16,6 +16,12 @@ public class Character : MonoBehaviour
     void Start()
     {
         stats = GetStats();
+        GameManager.instance.characters.Add(this);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.instance.characters.Remove(this);
     }
 
     public static Stat[] GetStats()
@@ -32,15 +38,13 @@ public class Character : MonoBehaviour
         return a[0].stats;
      }
 
-
-    // Update is called once per frame
     void Update()
     {
         ActualizeStats();
-        //Roll ?
         CheckEvents(possibleEvents);
-        if (isDragged){Drag();}
-        //Productivity
+        if (isDragged){
+            Drag();
+        }
     }
 
 #region drag/drop
@@ -120,8 +124,6 @@ public class Character : MonoBehaviour
             this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, 20f * Time.deltaTime);
             yield return null; 
         }
-        
-   
     }
             
 

@@ -19,71 +19,25 @@ public class EventData : ScriptableObject
 }
 
 [Serializable]
-public class Condition
-{
-    public enum ConditionType
-    {
-        CheckStat, CheckTrait
-    }
-    public ConditionType type;
-    public string statName;
-    public float statValue;
-    public string traitName;
-
-    public bool Check(string[] traitList, Stat[] statList)
-    {
-        switch (type)
-        {
-            case ConditionType.CheckStat:
-                foreach(Stat stat in statList)
-                {
-                    if (stat.statName == statName && stat.actualValue <= statValue)
-                    {
-                        return true;
-                    }
-                }
-                return false;
-
-
-            case ConditionType.CheckTrait:
-                foreach(string str in traitList)
-                {
-                    if (str.Equals(traitName))
-                    {
-                        return true;
-                    }
-                }
-                return false;
-        }
-        return false;
-    }
-}
-
-[Serializable]
 public class TargetEffectPair
 {
     public Effect[] effects;
+    private bool used = false;
     public enum TargetingRule
     {
         ThisCharacter, AdjacentCharacter, RandomCharacter
     }
     public TargetingRule targetingRule;
-    public void Play()
+    public void Play(bool useOnce)
     {
-        ////TO DO
+        if(useOnce == false || used == false)
+        {
+            used = true;
+            foreach(Effect e in effects)
+            {
+                e.Play();
+            }
+        }
     }
 }
 
-[Serializable]
-public class Effect
-{
-    public enum EffectType
-    {
-        AlterStat, MoveCharacter, ApplyCondition
-    }
-
-    public float alterStatValue;
-    ///Each effect behavior must implement its behaviour from here.
-    ///Potentially ->  Create a EffectData scriptable object if easier to manager
-    ///Legacy to vary effectType ?
-}
