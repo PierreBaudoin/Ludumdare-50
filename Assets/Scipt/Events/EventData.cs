@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Event", menuName = "Custom/Event", order = 1)]
+[CreateAssetMenu(fileName = "New Event", menuName = "Custom/Event/Base", order = 1)]
 public class EventData : ScriptableObject
 {
-    public float chance = 1.0f;
+    [Range(0,1)] public float chance = 1.0f;
     public TriggerCondition[] possibleTriggers;
     public TargetEffectPair[] targetEffectPairs;
 
@@ -16,45 +16,6 @@ public class EventData : ScriptableObject
     }
 
     public EventType type = EventType.Local;
-}
-
-[Serializable]
-public class TriggerCondition
-{
-    public enum TriggerType
-    {
-        AND, OR
-    }
-
-    public TriggerType triggerType = TriggerType.AND;
-    public Condition[] conditions;
-
-    public bool Check(string[] traitList, Stat[] statList)
-    {
-        switch (triggerType)
-        {
-            case TriggerType.AND:
-                foreach (Condition c in conditions)
-                {
-                    if (c.Check(traitList, statList) == false)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-
-            case TriggerType.OR:
-                foreach (Condition c in conditions)
-                {
-                    if (c.Check(traitList, statList))
-                    {
-                        return true;
-                    }
-                }
-                return false;
-        }
-        return false;
-    }
 }
 
 [Serializable]

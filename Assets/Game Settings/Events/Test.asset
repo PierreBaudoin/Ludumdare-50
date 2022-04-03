@@ -10,18 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 596bdeccf762df841944ee90c92a4b5c, type: 3}
-  m_Name: myevent
+  m_Name: Test
   m_EditorClassIdentifier: 
-  chance: 0.2
-  possibleTriggers:
-  - triggerType: 0
-    conditions:
-    - type: 0
-      statName: HYGIEN
-      statValue: 10
-      traitName: 
-  targetEffectPairs:
-  - effects:
-    - alterStatValue: 50
-    targetingRule: 1
+  chance: 1
+  possibleTriggers: []
+  targetEffectPairs: []
   type: 1
