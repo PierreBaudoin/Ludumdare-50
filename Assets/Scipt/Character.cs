@@ -7,11 +7,14 @@ public class Character : MonoBehaviour
 {
     public Stat[] stats;
     public CharacterData characterData;
+    public Transform model;
     private bool isDragged = false;
     private  Room currentRoom;
     private Transform currentTransform;
     private EventData[] possibleEvents;
     private string[] traitList;
+    private Renderer[] renderers;
+    private Collider collider;
 
     void Start()
     {
@@ -21,6 +24,8 @@ public class Character : MonoBehaviour
             s.actualValue = s.maxValue;
         }
         GameManager.instance.characters.Add(this);
+        renderers = model.GetComponentsInChildren<Renderer>();
+        collider = GetComponent<Collider>();
     }
 
     void OnDestroy()
@@ -149,5 +154,23 @@ public class Character : MonoBehaviour
         {
             s.Reduce(s.depressionRate * Time.deltaTime);
         }
+    }
+
+    public void Disappear()
+    {
+        foreach(Renderer renderer in renderers)
+        {
+            renderer.enabled = false;
+        }
+        collider.enabled = false;
+    }
+
+    public void Appear()
+    {
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.enabled = true;
+        }
+        collider.enabled = true;
     }
 }
