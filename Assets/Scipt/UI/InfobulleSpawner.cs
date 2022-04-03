@@ -67,7 +67,7 @@ public class InfobulleSpawner : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         fillerImage.fillAmount = 1.0f;
-        yield return new WaitForSeconds(0.05f);
+        //yield return new WaitForSeconds(0.05f);
         fillerImage.fillAmount = 0.0f;
         display();
         infobulleOn = true;
@@ -78,7 +78,7 @@ public class InfobulleSpawner : MonoBehaviour
         if (infobulleOn)
         {
             Debug.Log("Removing infobulle");
-            Timer t = new Timer(0.5f, hide);
+            Timer t = new Timer(0.25f, hide);
             t.Play();
             //hide();
             infobulleOn = false;
