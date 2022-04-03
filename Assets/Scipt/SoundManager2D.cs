@@ -35,6 +35,13 @@ public class SoundManager2D : MonoBehaviour
         instance.sfxSource.PlayOneShot(clip);
     }
 
+    public static void PlaySFXRandomizePitch(AudioClip clip, float volume, float pitchRange)
+    {
+        instance.sfxSource.pitch = Random.Range(1.0f - pitchRange, 1.0f + pitchRange);
+        PlaySFX(clip, volume);
+        instance.sfxSource.pitch = 1.0f;
+    }
+
     public static void SetVolumeSFX(float volume)
     {
         instance.sfxSource.volume = volume;
