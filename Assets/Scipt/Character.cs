@@ -1,26 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Character : MonoBehaviour
 {
-    private bool isDragged = false;
-    private  Room oldRoom;
     public Stat[] stats;
+    private bool isDragged = false;
+    private  Room currentRoom;
+    private Transform currentTransform;
     private EventData[] possibleEvents;
     private string[] traitList;
-    private Transform oldTransform;
-    private Vector3 oldPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        ///Get Data from CharacterData file
-    
-        ///Get Local Events from EventData file
-
-        oldPos = this.transform.position;
+        stats = GetStats();
     }
+
+    public static Stat[] GetStats()
+    {
+        string[] guids = AssetDatabase.FindAssets("t:"+ typeof(CharacterData).Name);
+        CharacterData[] a = new CharacterData[guids.Length];
+
+        for(int i =0;i<guids.Length;i++) 
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guids[i]);
+            a[i] = AssetDatabase.LoadAssetAtPath<CharacterData>(path);
+        }
+ 
+        return a[0].stats;
+     }
 
 
     // Update is called once per frame
@@ -33,6 +43,7 @@ public class Character : MonoBehaviour
         //Productivity
     }
 
+#region drag/drop
     void Drag (){
         if (!isDragged){
             foreach (Character o in GameObject.FindObjectsOfType<Character>()){
@@ -70,34 +81,36 @@ public class Character : MonoBehaviour
         {
             Room newRoom = hit.transform.gameObject.GetComponentInParent<Room>();
             //Si même room
-            if (newRoom == oldRoom){
-                StartCoroutine(TravelBack(oldTransform.position));
+            if (newRoom == currentRoom){
+                StartCoroutine(TravelBack(currentTransform.position));
                 return;
             }
             //Si room différente
-            if (newRoom != oldRoom){
+            if (newRoom != currentRoom){
                 if (!newRoom.IsRoomFull()){ //Et qu'elle n'est pas pleine
-                    if (oldRoom != null)
+                    if (currentRoom != null)
                     {
-                        oldRoom.RemoveCharacter(this);
+                        currentRoom.EndUseRoom(this);
+                        currentRoom.RemoveCharacter(this);
                     }
                     
-                    this.oldTransform = newRoom.AddCharacter(this);
-                    StartCoroutine(TravelBack(oldTransform.position));
-                    oldRoom = newRoom;
+                    this.currentTransform = newRoom.AddCharacter(this);
+                    StartCoroutine(TravelBack(currentTransform.position));
+                    newRoom.StartUseRoom(this);
+                    currentRoom = newRoom;
                     return;
                 }
                 else //Si la room est pleine 
                 {   
-                    StartCoroutine(TravelBack(oldTransform.position));
+                    StartCoroutine(TravelBack(currentTransform.position));
                 }
             }
             
         } else //Si pas de room 
         {
             Debug.LogError("Character is in no room.");
-            if (oldRoom != null) {oldRoom.RemoveCharacter(this);}
-            oldRoom = null;
+            if (currentRoom != null) {currentRoom.RemoveCharacter(this);}
+            currentRoom = null;
             StartCoroutine(TravelBack(hit.point));
         } 
     }
@@ -121,40 +134,19 @@ public class Character : MonoBehaviour
             Drag(); 
         }
     }
-
+#endregion
     
-
     private void CheckEvents(EventData[] events)
-    {/*
-        foreach(EventData ev in events)
-        {
-            foreach (TriggerCondition trig in ev.possibleTriggers)
-            {
-                if (trig.Check(traitList, stats))
-                {
-                    foreach (TargetEffectPair pair in ev.targetEffectPairs)
-                    {
-                        pair.Play();
-                    }
-                }
-                
-            }
-        }*/
+    {
+        Debug.LogWarning("Not implemented yet");
     }
 
     private void ActualizeStats()
     {
-        /*
-        foreach(Stat stat in stats)
+        currentRoom?.UseRoomUpdate(this);
+        foreach(Stat s in stats)
         {
-            float var = stat.actualValue - (stat.depressionRate * Time.deltaTime);
-            stat.Reduce(var);
-        }*/
+            s.Reduce(s.depressionRate * Time.deltaTime);
+        }
     }
 }
-
-public class Roll
-{
-
-}
-

@@ -62,7 +62,8 @@ MonoBehaviour:
   currentScore: 0
   characterindex: 0
   bulletValue: 5
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1900349248819807601, guid: da7e648d7fb863447a85760afaf05d86,
+    type: 3}
   bulletPool: []
   hungerName: HUNGER
   fatigueName: FATIGUE

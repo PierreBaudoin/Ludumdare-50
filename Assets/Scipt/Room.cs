@@ -86,7 +86,6 @@ public class Room : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(bite);
         validPositions[bite] = null;
     }
 

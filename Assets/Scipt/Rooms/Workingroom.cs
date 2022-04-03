@@ -5,7 +5,6 @@ using UnityEngine;
 public class Workingroom : Room
 {
     public float currentScore = 0;
-    public int characterindex = 0;
     public int bulletValue = 5;
     public GameObject bulletPrefab;
     public List<ScoreBullet> bulletPool;
@@ -20,13 +19,12 @@ public class Workingroom : Room
     {
         float productivity;
 
-        float hunger = GetStat(character.stats, hungerName).actualValue;
-        float fatigue = GetStat(character.stats, fatigueName).actualValue;
-        float hygiene = GetStat(character.stats, hygieneName).actualValue;
-        float moral = GetStat(character.stats, moralName).actualValue;
+        float hunger = GetStat(character.stats, hungerName).actualValue /100;
+        float fatigue = GetStat(character.stats, fatigueName).actualValue /100;
+        float hygiene = GetStat(character.stats, hygieneName).actualValue /100;
+        float moral = GetStat(character.stats, moralName).actualValue /100;
 
-        productivity = Mathf.Pow(hunger * fatigue * hygiene * moral * hunger * fatigue * hygiene * moral, 1/5);
-        Debug.Log(productivity + " : " + hunger + " - " + fatigue + " - " + hygiene + " - " + moral);
+        productivity = Mathf.Pow(hunger * fatigue * hygiene * moral * hunger * fatigue * hygiene * moral, 1/10) / 10;
 
         return productivity;
     }
@@ -47,21 +45,16 @@ public class Workingroom : Room
         if(bulletPool.Count > 0)
         {
              b = bulletPool[0];
+             bulletPool.Remove(b);
         }
         else
         {
             b = Instantiate(bulletPrefab).GetComponent<ScoreBullet>();
+            b.transform.SetParent(GameManager.instance.bulletTraget.parent);
         }
 
+        b.Init(slotsTransform[Random.Range(0, slotsTransform.Length)].position, this);
         b.gameObject.SetActive(true);
-        
-        if(characterindex >= GetNumberOfFilledSlots())
-        {
-            characterindex = 0;
-        }
-        
-        b.Init(slotsTransform[0].position, this);
-        characterindex ++;
         
         return b;
     }
