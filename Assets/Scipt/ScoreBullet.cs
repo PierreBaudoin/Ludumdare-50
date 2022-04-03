@@ -10,8 +10,8 @@ public class ScoreBullet : MonoBehaviour
     Workingroom room;
     private Image image;
     private float timer;
-    private float phase1 = 1.5f;
-    private float phase2 = 3f;
+    public float phase1 = 0.2f;
+    public float phase2 = 1.5f;
 
     void Awake()
     {
@@ -28,28 +28,14 @@ public class ScoreBullet : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer < phase1)
-        {
-            GoUp();
-        }
-        else if (timer < phase2){}
-        else {
-            GoToScoreBar();
-            }
-
-        }
+        GoToScoreBar();
+    }
 
     
-    void GoUp (){
-        if(Mathf.Abs(rect.position.x - target.position.x + rect.position.y - target.position.y) <= 5f)
-        {
-            GameManager.instance.Score(5);
-            room.PoolInBullet(this);
-        }
-        else
-        {
-            this.transform.position += transform.up.normalized * velocity/2 * Time.deltaTime;
-        }
+    void GoUp ()
+    {
+        this.transform.position += transform.up.normalized * velocity/2 * Time.deltaTime;
+        
     }
 
 

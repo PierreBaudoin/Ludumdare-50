@@ -8,9 +8,9 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
 
-
-
-    private DialogBoxEvent[] dialogBoxEvents;
+    [SerializeField] private GameObject EventPopUpGameObject;
+    private List<DialogBoxEvent> dialogBoxEvents;
+    private List<DialogBoxEvent> usedEffects;
 
 
     void Awake()
@@ -23,6 +23,7 @@ public class EventManager : MonoBehaviour
         instance = this;
 
         GatherDialogueBoxEvents();
+        usedEffects = new List<DialogBoxEvent>();
     }
 
     void Update()
@@ -35,22 +36,46 @@ public class EventManager : MonoBehaviour
                 {
                     foreach(TargetEffectPair t in d.targetEffectPairs)
                     {
-                        t.Play(d.useOncePerGame);
+                        if(usedEffects.Contains(d))
+                        {
+                            if(d.useOncePerGame == false)
+                            {
+                                PlayDialogBoxEffect(d,c,t);
+                            }
+                        }
+                        else
+                        {
+                            PlayDialogBoxEffect(d, c, t);
+                        }
                     }
                 }
             }
         }
     }
 
+    private void PlayDialogBoxEffect(DialogBoxEvent d, Character target, TargetEffectPair t)
+    {
+        t.Play(target);
+        DisplayEvent(d);
+        usedEffects.Add(d);
+    }
+
     private void GatherDialogueBoxEvents()
     {
         string[] guids = AssetDatabase.FindAssets("t:"+ typeof(DialogBoxEvent).Name);
         
-        dialogBoxEvents = new DialogBoxEvent[guids.Length];
+        dialogBoxEvents = new List<DialogBoxEvent>();
         for(int i =0;i<guids.Length;i++) 
         {
             string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-            dialogBoxEvents[i] = AssetDatabase.LoadAssetAtPath<DialogBoxEvent>(path);
+            DialogBoxEvent d = AssetDatabase.LoadAssetAtPath<DialogBoxEvent>(path);
+            if(d.useInGame) { dialogBoxEvents.Add(d); }
         }
+    }
+
+    public void DisplayEvent(DialogBoxEvent d)
+    {
+        EventPopUpGameObject.GetComponent<EventPopUp>().gameObject.SetActive(true);
+        EventPopUpGameObject.GetComponent<EventPopUp>().Init(d.textToDisplay);
     }
 }

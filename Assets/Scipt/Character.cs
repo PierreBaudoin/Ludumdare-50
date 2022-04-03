@@ -7,17 +7,27 @@ public class Character : MonoBehaviour
 {
     public Stat[] stats;
     public CharacterData characterData;
+    public Transform model;
     private bool isDragged = false;
     private  Room currentRoom;
     private Transform currentTransform;
     private EventData[] possibleEvents;
     private string[] traitList;
+    private Renderer[] renderers;
+    private Collider collider;
 
-    // Start is called before the first frame update
     void Start()
     {
         stats = GetStats();
+        foreach(Stat s in stats)
+        {
+            s.actualValue = s.maxValue;
+        }
         GameManager.instance.characters.Add(this);
+        renderers = model.GetComponentsInChildren<Renderer>();
+        collider = GetComponent<Collider>();
+
+        JoinRoom(GameManager.instance.workingroom);
     }
 
     void OnDestroy()
@@ -43,7 +53,6 @@ public class Character : MonoBehaviour
     void Update()
     {
         ActualizeStats();
-        CheckEvents(possibleEvents);
         if (isDragged){
             Drag();
         }
@@ -100,10 +109,7 @@ public class Character : MonoBehaviour
                         currentRoom.RemoveCharacter(this);
                     }
                     
-                    this.currentTransform = newRoom.AddCharacter(this);
-                    StartCoroutine(TravelBack(currentTransform.position));
-                    newRoom.StartUseRoom(this);
-                    currentRoom = newRoom;
+                    JoinRoom(newRoom);
                     return;
                 }
                 else //Si la room est pleine 
@@ -127,6 +133,14 @@ public class Character : MonoBehaviour
             yield return null; 
         }
     }
+
+    private void JoinRoom(Room room)
+    {
+        this.currentTransform = room.AddCharacter(this);
+        StartCoroutine(TravelBack(currentTransform.position));
+        room.StartUseRoom(this);
+        currentRoom = room;
+    }
             
 
     //Drag And Drop
@@ -139,11 +153,6 @@ public class Character : MonoBehaviour
         }
     }
 #endregion
-    
-    private void CheckEvents(EventData[] events)
-    {
-        Debug.LogWarning("Not implemented yet");
-    }
 
     private void ActualizeStats()
     {
@@ -152,5 +161,23 @@ public class Character : MonoBehaviour
         {
             s.Reduce(s.depressionRate * Time.deltaTime);
         }
+    }
+
+    public void Disappear()
+    {
+        foreach(Renderer renderer in renderers)
+        {
+            renderer.enabled = false;
+        }
+        collider.enabled = false;
+    }
+
+    public void Appear()
+    {
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.enabled = true;
+        }
+        collider.enabled = true;
     }
 }

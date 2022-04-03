@@ -1794,7 +1794,7 @@ RectTransform:
   m_GameObject: {fileID: 1548701275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 772415695}
@@ -2460,7 +2460,8 @@ GameObject:
   - component: {fileID: 3728453703719994946}
   - component: {fileID: 3728453703719994947}
   - component: {fileID: 3728453703719994956}
-  - component: {fileID: 7684440206605148353}
+  - component: {fileID: 1645774266}
+  - component: {fileID: 9009814084561027569}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -2498,6 +2499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: []
+  characterData: {fileID: 11400000, guid: c6387a6b99892074cbe8bfb8b99d4131, type: 2}
+  model: {fileID: 3728453704373949131}
 --- !u!136 &3728453703719994956
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2508,11 +2511,31 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3.5
+  m_Radius: 0.2
+  m_Height: 1.4406015
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7684440206605148353
+  m_Center: {x: 0, y: 0.49610466, z: 0}
+--- !u!95 &1645774266
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728453703719994945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49d8b3d005622fc49a817627146039b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9009814084561027569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2521,12 +2544,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 3728453703719994945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf7e7e41f7b2234d8d46bfd91e77f87, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aa5b54570079d94984c513092d86e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerBeforeInfobulle: 0.5
+  timerBeforeInfobulle: 0.2
   mouseOnObject: 0
   toHide: {fileID: 1548701275}
+  nameText: {fileID: 307094753}
+  descriptionText: {fileID: 1959488662}
+  traitsText: {fileID: 534158623}
+  postItImage: {fileID: 1486063475}
+  profilePicImage: {fileID: 1850973322}
+  slidersStats:
+  - {fileID: 1325402996}
+  - {fileID: 461555550}
+  - {fileID: 937035645}
+  - {fileID: 2076070291}
 --- !u!1 &3728453704373949130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,8 +2585,8 @@ Transform:
   m_GameObject: {fileID: 3728453704373949130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3728453705014655635}
   - {fileID: 3728453705067454407}
@@ -2752,18 +2785,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4561274005835845539}
-  m_LocalRotation: {x: 0.23911765, y: -0.3696438, z: 0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 0, y: 0, z: -0.26}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalRotation: {x: -0.09904573, y: 0.8923992, z: -0.23911768, w: -0.36964363}
+  m_LocalPosition: {x: 0, y: 0, z: 1.41}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1548701276}
   m_Father: {fileID: 3728453703719994946}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 30, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 225, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.48, y: 8.21}
+  m_AnchoredPosition: {x: 1.51, y: 3.77}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4443660765012095341

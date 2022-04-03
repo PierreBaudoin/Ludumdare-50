@@ -11,7 +11,11 @@ public class Room : MonoBehaviour
     public GameObject[] toActivateWhenInvisible;
     public GameObject[] toDeactivateWhenInvisible;
 
+    public string animatorParameter = "show_room";
     public Dictionary<Transform, Character> validPositions;
+
+    private Animator roomAnimator;
+    private bool hasAnimator = false;
 
     protected virtual void Start()
     {
@@ -20,6 +24,8 @@ public class Room : MonoBehaviour
         {
             validPositions.Add(tr, null);
         }
+        roomAnimator = GetComponent<Animator>();
+        if (roomAnimator != null) hasAnimator = true;
     }
 
     public bool IsRoomFull()
@@ -46,19 +52,26 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void SetVisible()
+    public void SetVisibility(bool visibility)
     {
-        SetActiveAll(toActivateWhenVisible, true);
-        SetActiveAll(toDeactivateWhenVisible, false);
+        SetActiveAll(toActivateWhenVisible, visibility);
+        SetActiveAll(toDeactivateWhenVisible, !visibility);
+        SetActiveAll(toActivateWhenInvisible, !visibility);
+        SetActiveAll(toDeactivateWhenInvisible, visibility);
+        if (GetNumberOfFilledSlots() != 0)
+        {
+            foreach (Character character in validPositions.Values)
+            {
+                character.Appear();
+            }
+        }
+        if (hasAnimator)
+        {
+            roomAnimator.SetBool(animatorParameter, visibility);
+        }
     }
 
-    public void SetInvisible()
-    {
-        SetActiveAll(toActivateWhenInvisible, true);
-        SetActiveAll(toDeactivateWhenInvisible, false);
-    }
-
-    public Transform AddCharacter(Character character)
+    public virtual Transform AddCharacter(Character character)
     {
         Transform result;
         if (IsRoomFull())

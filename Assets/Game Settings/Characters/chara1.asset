@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
   m_Name: chara1
   m_EditorClassIdentifier: 
-  characterName: 
-  description: 
-  model: {fileID: 0}
+  characterName: Roger
+  description: Lapin
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: cfcf7710e1cedbf47a1ac4f1fb066891, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.01
+    actualValue: 99.38259
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.05
+    actualValue: 96.88951
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.1
+    actualValue: 1
   - statName: MORAL
     maxValue: 100
     depressionRate: 1

@@ -10,14 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4ebcbed5cfe8ef47b28c14ae1c1451f, type: 3}
-  m_Name: Test
+  m_Name: Odeur
   m_EditorClassIdentifier: 
-  name: 
-  useOncePerGame: 0
+  notes: 
+  useInGame: 1
+  useOncePerGame: 1
   chance: 1
-  textToDisplay: 
+  textToDisplay: Smell
   possibleTriggers:
-  - triggerType: 0
-    conditionsStats: []
+  - triggerType: 1
+    conditionsStats:
+    - statName: HYGIENE
+      statValue: 50
+      comparator: 3
     conditionsTraits: []
-  targetEffectPairs: []
+  targetEffectPairs:
+  - targetingRule: 1
+    statBonusEffects:
+    - statName: MORAL
+      statBonus: -10

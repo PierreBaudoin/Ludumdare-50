@@ -12,24 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
   m_Name: chara4
   m_EditorClassIdentifier: 
-  characterName: 
-  description: 
-  model: {fileID: 0}
+  characterName: Omar
+  description: "Crustac\xE9"
+  postIt: {fileID: 21300000, guid: c596f52aaa97b7449ad6d9fb257de125, type: 3}
+  profilePic: {fileID: 21300000, guid: 05291c2f4f0f6cb4482a3e0555c87c08, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.1
+    actualValue: 92.27022
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.05
+    actualValue: 96.135185
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.01
+    actualValue: 99.22624
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 100
+    actualValue: 22.701931
   traits: []
