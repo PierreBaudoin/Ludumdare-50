@@ -8,8 +8,8 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
 
-
-
+    [SerializeField] private GameObject EventPopUpPrefab;
+    private EventPopUp eventPopUp;
     private List<DialogBoxEvent> dialogBoxEvents;
 
 
@@ -35,7 +35,14 @@ public class EventManager : MonoBehaviour
                 {
                     foreach(TargetEffectPair t in d.targetEffectPairs)
                     {
-                        t.Play(d.useOncePerGame, c);
+                        if(t.used == true && d.useOncePerGame == true)
+                        {
+                            Debug.Log("Event already used");
+                        }
+                        else{
+                            t.Play(c);
+                            DisplayEvent(d);
+                        }
                     }
                 }
             }
@@ -53,5 +60,20 @@ public class EventManager : MonoBehaviour
             DialogBoxEvent d = AssetDatabase.LoadAssetAtPath<DialogBoxEvent>(path);
             if(d.useInGame) { dialogBoxEvents.Add(d); }
         }
+    }
+
+    public void DisplayEvent(DialogBoxEvent d)
+    {
+        if(eventPopUp == null)
+        {
+            GameObject g = Instantiate(EventPopUpPrefab, transform);
+            eventPopUp = g.GetComponent<EventPopUp>();
+        }
+        else
+        {
+            eventPopUp.gameObject.SetActive(true);
+        }
+
+        eventPopUp.Init(d.textToDisplay);
     }
 }

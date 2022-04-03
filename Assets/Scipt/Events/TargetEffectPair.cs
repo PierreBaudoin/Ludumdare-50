@@ -9,30 +9,23 @@ public class TargetEffectPair
     public TargetingRule targetingRule;
     public StatBonusEffect[] statBonusEffects;
 
-    private bool used = false;
+    public bool used = false;
 
-    public void Play(bool useOnce, Character target)
+    public void Play(Character target)
     {
-        if(used == true && useOnce == true)
-        {
-            Debug.Log("Event already used");
-        }
-        else
-        {
-            Debug.Log("Play");
-            used = true;
-            List<Effect> effects = FillEffectList(statBonusEffects);
+        used = true;
+        List<Effect> effects = FillEffectList(statBonusEffects);
 
-            foreach(Effect e in effects)
+        foreach(Effect e in effects)
+        {
+            switch(targetingRule)
             {
-                switch(targetingRule)
-                {
-                    case TargetingRule.ThisCharacter:
-                    e.Play(new Character[] {target});
-                    break;
+                case TargetingRule.ThisCharacter:
+                e.Play(new Character[] {target});
+                break;
 
-                    case TargetingRule.AdjacentCharacter:
-                    foreach(Room r in MonoBehaviour.FindObjectsOfType<Room>()) // Pour chaque room
+                case TargetingRule.AdjacentCharacter:
+                foreach(Room r in MonoBehaviour.FindObjectsOfType<Room>()) // Pour chaque room
                         {
                             foreach(Transform t in r.validPositions.Keys) // Pour chaque Character
                             {
@@ -51,12 +44,11 @@ public class TargetEffectPair
                                 }
                             }
                         }
-                    break;
+                break;
 
-                    case TargetingRule.RandomCharacter:
-                    e.Play(new Character[] {GameManager.instance.characters[UnityEngine.Random.Range(0, GameManager.instance.characters.Count)]});
-                    break;
-                }
+                case TargetingRule.RandomCharacter:
+                e.Play(new Character[] {GameManager.instance.characters[UnityEngine.Random.Range(0, GameManager.instance.characters.Count)]});
+                break;
             }
         }
     }
