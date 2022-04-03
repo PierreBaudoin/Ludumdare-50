@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Slider scoreSlider;
     public RectTransform bulletTraget;
+    public List<Character> characters;
 
     private float score;
 
