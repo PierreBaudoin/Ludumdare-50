@@ -11,7 +11,7 @@ public class InfobulleObject : MonoBehaviour
 
     private void Start()
     {
-        Hide();
+        toHide.SetActive(false);
     }
 
     private void OnMouseEnter()
@@ -28,13 +28,13 @@ public class InfobulleObject : MonoBehaviour
     }
 
 
-    public void Display()
+    protected virtual void Display()
     {
         Debug.Log("Display");
         toHide.SetActive(true);
     }
 
-    public void Hide()
+    protected virtual void Hide()
     {
         Debug.Log("Hide");
         toHide.SetActive(false);   

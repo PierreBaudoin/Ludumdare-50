@@ -8,7 +8,8 @@ public class CharacterData : ScriptableObject
 {
     public string characterName;
     public string description;
-    public GameObject model;
+    public Sprite postIt;
+    public Sprite profilePic;
     public Stat[] stats =
     {
         new Stat("HUNGER", 100), new Stat("FATIGUE", 100), new Stat("HYGIENE", 100), new Stat("MORAL", 100)
