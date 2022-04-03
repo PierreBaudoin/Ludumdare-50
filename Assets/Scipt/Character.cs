@@ -6,6 +6,7 @@ using UnityEditor;
 public class Character : MonoBehaviour
 {
     public Stat[] stats;
+    public CharacterData characterData;
     private bool isDragged = false;
     private  Room currentRoom;
     private Transform currentTransform;
@@ -24,8 +25,8 @@ public class Character : MonoBehaviour
         GameManager.instance.characters.Remove(this);
     }
 
-    public static Stat[] GetStats()
-    {
+    public Stat[] GetStats()
+    { /*
         string[] guids = AssetDatabase.FindAssets("t:"+ typeof(CharacterData).Name);
         CharacterData[] a = new CharacterData[guids.Length];
 
@@ -35,7 +36,8 @@ public class Character : MonoBehaviour
             a[i] = AssetDatabase.LoadAssetAtPath<CharacterData>(path);
         }
  
-        return a[0].stats;
+        return a[0].stats;*/
+        return characterData.stats;
      }
 
     void Update()
