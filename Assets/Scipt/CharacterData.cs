@@ -66,5 +66,9 @@ public class Stat
         {
             actualValue = maxValue;
         }
+        if (actualValue < 1)
+        {
+            actualValue = 1;
+        }
     }
 }

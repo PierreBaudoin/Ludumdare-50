@@ -13,10 +13,13 @@ public class Character : MonoBehaviour
     private EventData[] possibleEvents;
     private string[] traitList;
 
-    // Start is called before the first frame update
     void Start()
     {
         stats = GetStats();
+        foreach(Stat s in stats)
+        {
+            s.actualValue = s.maxValue;
+        }
         GameManager.instance.characters.Add(this);
     }
 

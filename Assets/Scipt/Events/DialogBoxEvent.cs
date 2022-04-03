@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Dialogue Box", menuName = "Custom/Event/DialogueBox", order = 2)]
 public class DialogBoxEvent : ScriptableObject
 {
-    public string name;
+    public string notes;
     public bool useInGame = true;
     public bool useOncePerGame;
     [Range(0,1)] public float chance = 1f;
