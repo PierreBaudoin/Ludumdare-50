@@ -46,23 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4426d05877c1bb74e8857f13900b3223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-  - statName: HUNGER
-    maxValue: 100
-    depressionRate: 1
-    actualValue: 0
-  - statName: FATIGUE
-    maxValue: 100
-    depressionRate: 1
-    actualValue: 0
-  - statName: HYGIENE
-    maxValue: 100
-    depressionRate: 1
-    actualValue: 0
-  - statName: MORAL
-    maxValue: 100
-    depressionRate: 1
-    actualValue: 0
+  stats: []
 --- !u!136 &3728453703719994956
 CapsuleCollider:
   m_ObjectHideFlags: 0

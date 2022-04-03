@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Slider scoreSlider;
+    public RectTransform bulletTraget;
 
     private float score;
 
@@ -15,6 +18,7 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("Multiple GameManager detected : intance destroyed");
             Destroy(this.gameObject);
         }
+        instance = this;
     }
 
     public float GetScore()
@@ -25,6 +29,7 @@ public class GameManager : MonoBehaviour
     public void Score (float bulletValue)
     {
         score += bulletValue * Time.deltaTime;
+        scoreSlider.value = score;
     }
 
 }

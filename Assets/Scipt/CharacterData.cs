@@ -24,7 +24,6 @@ public class Stat
     public string statName;
     public float maxValue;
     public float depressionRate;
-    [HideInInspector]
     public float actualValue;
 
     private static float defaultDepressionRate = 1.0f;
@@ -53,9 +52,9 @@ public class Stat
     public void Reduce(float amount)
     {
         actualValue -= amount;
-        if (actualValue <= 0)
+        if (actualValue <= 1)
         {
-            actualValue = 0;
+            actualValue = 1;
         }
     }
 

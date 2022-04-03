@@ -10,6 +10,11 @@ public class Kitchen : Room
 
     private Dictionary<Character, Stat> dictionary;
 
+    void Awake()
+    {
+        dictionary = new Dictionary<Character, Stat>();
+    }
+
     public override void StartUseRoom(Character character)
     {
         Stat var = GetStat(character.stats, statName);

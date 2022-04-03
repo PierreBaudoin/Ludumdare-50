@@ -11,16 +11,17 @@ public class ScoreBullet : MonoBehaviour
     void Awake()
     {
         rect = GetComponent<RectTransform>();
+        target = GameManager.instance.bulletTraget;
     }
     public void Init(Vector3 position, Workingroom room)
     {
         this.room = room;
-        rect.position =  Camera.current.WorldToScreenPoint(position);
+        rect.position =  Camera.main.WorldToScreenPoint(position);
     }
 
     void Update()
     {
-        if((rect.position.x - target.position.x + rect.position.y - target.position.y) <= 5)
+        if(Mathf.Abs(rect.position.x - target.position.x + rect.position.y - target.position.y) <= 5f)
         {
             GameManager.instance.Score(5);
             room.PoolInBullet(this);

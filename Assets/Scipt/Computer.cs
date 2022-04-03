@@ -11,7 +11,6 @@ public class Computer : MonoBehaviour
     public MeshRenderer screenMesh;
 
     private Animator animator;
-    private bool isInteracted = false;
 
     private void Start()
     {
