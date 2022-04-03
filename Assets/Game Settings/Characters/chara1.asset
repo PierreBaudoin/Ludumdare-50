@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: chara1
   m_EditorClassIdentifier: 
   characterName: Roger
-  description: 
-  model: {fileID: 0}
+  description: Lapin
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: cfcf7710e1cedbf47a1ac4f1fb066891, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
@@ -23,11 +24,11 @@ MonoBehaviour:
   - statName: FATIGUE
     maxValue: 100
     depressionRate: 0.05
-    actualValue: 70.3315
+    actualValue: 65.76453
   - statName: HYGIENE
     maxValue: 100
     depressionRate: 0.01
-    actualValue: 70.30678
+    actualValue: 69.39791
   - statName: MORAL
     maxValue: 100
     depressionRate: 1

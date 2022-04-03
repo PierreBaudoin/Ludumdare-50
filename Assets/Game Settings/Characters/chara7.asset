@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: chara7
   m_EditorClassIdentifier: 
   characterName: Mateo
-  description: 
-  model: {fileID: 0}
+  description: Hyperactif
+  postIt: {fileID: 21300000, guid: 8c6e20de654b8f44caf0178d0e0454f2, type: 3}
+  profilePic: {fileID: 21300000, guid: 750317beb301b694283a7f6925aaa443, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100

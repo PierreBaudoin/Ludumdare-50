@@ -13,23 +13,24 @@ MonoBehaviour:
   m_Name: chara2
   m_EditorClassIdentifier: 
   characterName: Sebastien
-  description: 
-  model: {fileID: 0}
+  description: War machine
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: 43d8b9e2f78519b489e89482bb729f8b, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
     depressionRate: 0.1
-    actualValue: 94.639435
+    actualValue: 92.27022
   - statName: FATIGUE
     maxValue: 100
     depressionRate: 0.01
-    actualValue: 99.46591
+    actualValue: 99.22624
   - statName: HYGIENE
     maxValue: 100
     depressionRate: 0.001
-    actualValue: 99.92139
+    actualValue: 99.883026
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 46.39169
+    actualValue: 22.701931
   traits: []

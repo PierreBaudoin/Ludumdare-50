@@ -28,6 +28,10 @@ public class InfobulleCharacter : InfobulleObject
         traitsText.text = GetTraits(data.traits);
         postItImage.sprite = data.postIt;
         profilePicImage.sprite = data.profilePic;
+        for (int i = 0; i < slidersStats.Length; ++i)
+        {
+            slidersStats[i].maxValue = stats[i].maxValue;
+        }
     }
 
     private void Update()

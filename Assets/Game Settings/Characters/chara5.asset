@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: chara5
   m_EditorClassIdentifier: 
   characterName: Mohamed
-  description: 
-  model: {fileID: 0}
+  description: Boxeur
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: f7be0d03fe7903541b23ebcb5d07e36a, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100

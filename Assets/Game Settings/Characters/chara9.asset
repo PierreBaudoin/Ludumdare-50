@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: chara9
   m_EditorClassIdentifier: 
   characterName: Alice
-  description: 
-  model: {fileID: 0}
+  description: "Drogu\xE9e"
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: f2d8cd12d38e2074daec40bf3c1186e4, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100

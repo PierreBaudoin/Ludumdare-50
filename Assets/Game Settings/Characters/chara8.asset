@@ -13,23 +13,24 @@ MonoBehaviour:
   m_Name: chara8
   m_EditorClassIdentifier: 
   characterName: Olivia
-  description: 
-  model: {fileID: 0}
+  description: "V\xE9g\xE9tal"
+  postIt: {fileID: 21300000, guid: c596f52aaa97b7449ad6d9fb257de125, type: 3}
+  profilePic: {fileID: 21300000, guid: 83ac455e4f49f694385486f37e5280a6, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
     depressionRate: 0.14
-    actualValue: 92.494675
+    actualValue: 89.17817
   - statName: FATIGUE
     maxValue: 100
     depressionRate: 0.06
-    actualValue: 96.78358
+    actualValue: 95.36208
   - statName: HYGIENE
     maxValue: 100
     depressionRate: 0.006
-    actualValue: 99.68227
+    actualValue: 99.54316
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 46.39169
+    actualValue: 22.701931
   traits: []

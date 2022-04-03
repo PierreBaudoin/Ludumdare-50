@@ -13,23 +13,24 @@ MonoBehaviour:
   m_Name: chara6
   m_EditorClassIdentifier: 
   characterName: Marie
-  description: 
-  model: {fileID: 0}
+  description: Ignorante
+  postIt: {fileID: 21300000, guid: 059105900da432647a748f908971e210, type: 3}
+  profilePic: {fileID: 21300000, guid: 08a180248deaed845ab88da88181cf19, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
     depressionRate: 0.05
-    actualValue: 97.31955
+    actualValue: 96.135185
   - statName: FATIGUE
     maxValue: 100
     depressionRate: 0.03
-    actualValue: 98.39185
+    actualValue: 97.68114
   - statName: HYGIENE
     maxValue: 100
     depressionRate: 0.001
-    actualValue: 99.92139
+    actualValue: 99.883026
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 46.39169
+    actualValue: 22.701931
   traits: []

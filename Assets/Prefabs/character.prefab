@@ -2549,6 +2549,16 @@ MonoBehaviour:
   timerBeforeInfobulle: 0.2
   mouseOnObject: 0
   toHide: {fileID: 1548701275}
+  nameText: {fileID: 307094753}
+  descriptionText: {fileID: 1959488662}
+  traitsText: {fileID: 534158623}
+  postItImage: {fileID: 1486063475}
+  profilePicImage: {fileID: 1850973322}
+  slidersStats:
+  - {fileID: 1325402996}
+  - {fileID: 461555550}
+  - {fileID: 937035645}
+  - {fileID: 2076070291}
 --- !u!1 &3728453704373949130
 GameObject:
   m_ObjectHideFlags: 0

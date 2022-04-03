@@ -67,7 +67,7 @@ public class InfobulleSpawner : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         fillerImage.fillAmount = 1.0f;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.05f);
         fillerImage.fillAmount = 0.0f;
         display();
         infobulleOn = true;
