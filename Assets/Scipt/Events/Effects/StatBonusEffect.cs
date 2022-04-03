@@ -10,7 +10,6 @@ public class StatBonusEffect : Effect
     public float statBonus;
     public override void Play(Character[] targets)
     {
-        Debug.Log("Effect");
         foreach(Character c in targets)
         {
             foreach(Stat s in c.stats)

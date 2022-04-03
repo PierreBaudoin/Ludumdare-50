@@ -8,8 +8,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
 
-    [SerializeField] private GameObject EventPopUpPrefab;
-    private EventPopUp eventPopUp;
+    [SerializeField] private GameObject EventPopUpGameObject;
     private List<DialogBoxEvent> dialogBoxEvents;
     private List<DialogBoxEvent> usedEffects;
 
@@ -76,16 +75,7 @@ public class EventManager : MonoBehaviour
 
     public void DisplayEvent(DialogBoxEvent d)
     {
-        if(eventPopUp == null)
-        {
-            GameObject g = Instantiate(EventPopUpPrefab, GameManager.instance.scoreSlider.GetComponent<RectTransform>().parent);
-            eventPopUp = g.GetComponent<EventPopUp>();
-        }
-        else
-        {
-            eventPopUp.gameObject.SetActive(true);
-        }
-
-        eventPopUp.Init(d.textToDisplay);
+        EventPopUpGameObject.GetComponent<EventPopUp>().gameObject.SetActive(true);
+        EventPopUpGameObject.GetComponent<EventPopUp>().Init(d.textToDisplay);
     }
 }

@@ -8,7 +8,6 @@ public class EventPopUp : MonoBehaviour
     [SerializeField] private TextUGUITranslationController description;
     public void Init(string textKey)
     {
-        print("Pop up init");
         description.key = textKey;
         description.ManualUpdateText();
     }
