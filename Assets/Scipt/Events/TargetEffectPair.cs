@@ -9,11 +9,8 @@ public class TargetEffectPair
     public TargetingRule targetingRule;
     public StatBonusEffect[] statBonusEffects;
 
-    public bool used = false;
-
     public void Play(Character target)
     {
-        used = true;
         List<Effect> effects = FillEffectList(statBonusEffects);
 
         foreach(Effect e in effects)

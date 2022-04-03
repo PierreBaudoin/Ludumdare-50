@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private GameObject EventPopUpPrefab;
     private EventPopUp eventPopUp;
     private List<DialogBoxEvent> dialogBoxEvents;
+    private List<DialogBoxEvent> usedEffects;
 
 
     void Awake()
@@ -23,6 +24,7 @@ public class EventManager : MonoBehaviour
         instance = this;
 
         GatherDialogueBoxEvents();
+        usedEffects = new List<DialogBoxEvent>();
     }
 
     void Update()
@@ -35,18 +37,28 @@ public class EventManager : MonoBehaviour
                 {
                     foreach(TargetEffectPair t in d.targetEffectPairs)
                     {
-                        if(t.used == true && d.useOncePerGame == true)
+                        if(usedEffects.Contains(d))
                         {
-                            Debug.Log("Event already used");
+                            if(d.useOncePerGame == false)
+                            {
+                                PlayDialogBoxEffect(d,c,t);
+                            }
                         }
-                        else{
-                            t.Play(c);
-                            DisplayEvent(d);
+                        else
+                        {
+                            PlayDialogBoxEffect(d, c, t);
                         }
                     }
                 }
             }
         }
+    }
+
+    private void PlayDialogBoxEffect(DialogBoxEvent d, Character target, TargetEffectPair t)
+    {
+        t.Play(target);
+        DisplayEvent(d);
+        usedEffects.Add(d);
     }
 
     private void GatherDialogueBoxEvents()
@@ -66,7 +78,7 @@ public class EventManager : MonoBehaviour
     {
         if(eventPopUp == null)
         {
-            GameObject g = Instantiate(EventPopUpPrefab, transform);
+            GameObject g = Instantiate(EventPopUpPrefab, GameManager.instance.scoreSlider.GetComponent<RectTransform>().parent);
             eventPopUp = g.GetComponent<EventPopUp>();
         }
         else

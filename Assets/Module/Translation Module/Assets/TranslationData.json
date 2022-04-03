@@ -74,6 +74,16 @@
       "key": "Return",
       "eng": "Return",
       "fra": "Retour"
+    },
+    "Smell": {
+      "key": "Smell",
+      "eng": "Smell",
+      "fra": "Pue la mort"
+    },
+    "OK": {
+      "key": "OK",
+      "eng": "OK",
+      "fra": "OK"
     }
   }
 }
