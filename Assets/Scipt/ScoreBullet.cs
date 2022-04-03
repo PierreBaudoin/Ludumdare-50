@@ -41,15 +41,8 @@ public class ScoreBullet : MonoBehaviour
 
     
     void GoUp (){
-        if(Mathf.Abs(rect.position.x - target.position.x + rect.position.y - target.position.y) <= 5f)
-        {
-            GameManager.instance.Score(5);
-            room.PoolInBullet(this);
-        }
-        else
-        {
-            this.transform.position += transform.up.normalized * velocity/2 * Time.deltaTime;
-        }
+        this.transform.position += transform.up.normalized * velocity/2 * Time.deltaTime;
+        
     }
 
 

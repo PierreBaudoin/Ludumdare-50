@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
   m_Name: chara9
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Alice
   description: 
   model: {fileID: 0}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 1
+    depressionRate: 0.09
     actualValue: 100
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 1
+    depressionRate: 0.03
     actualValue: 100
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 1
+    depressionRate: 0.08
     actualValue: 100
   - statName: MORAL
     maxValue: 100

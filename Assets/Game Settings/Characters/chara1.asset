@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
   m_Name: chara1
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Roger
   description: 
   model: {fileID: 0}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.1
+    actualValue: 1
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.05
+    actualValue: 70.3315
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
+    depressionRate: 0.01
+    actualValue: 70.30678
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 100
+    actualValue: 1
   traits: []
