@@ -26,6 +26,8 @@ public class Character : MonoBehaviour
         GameManager.instance.characters.Add(this);
         renderers = model.GetComponentsInChildren<Renderer>();
         collider = GetComponent<Collider>();
+
+        JoinRoom(GameManager.instance.workingroom);
     }
 
     void OnDestroy()
@@ -107,10 +109,7 @@ public class Character : MonoBehaviour
                         currentRoom.RemoveCharacter(this);
                     }
                     
-                    this.currentTransform = newRoom.AddCharacter(this);
-                    StartCoroutine(TravelBack(currentTransform.position));
-                    newRoom.StartUseRoom(this);
-                    currentRoom = newRoom;
+                    JoinRoom(newRoom);
                     return;
                 }
                 else //Si la room est pleine 
@@ -133,6 +132,14 @@ public class Character : MonoBehaviour
             this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, 20f * Time.deltaTime);
             yield return null; 
         }
+    }
+
+    private void JoinRoom(Room room)
+    {
+        this.currentTransform = room.AddCharacter(this);
+        StartCoroutine(TravelBack(currentTransform.position));
+        room.StartUseRoom(this);
+        currentRoom = room;
     }
             
 

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ebcbed5cfe8ef47b28c14ae1c1451f, type: 3}
   m_Name: Odeur
   m_EditorClassIdentifier: 
-  name: Si un joueur pue, ses voisins perdent du moral
+  notes: 
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: 
+  textToDisplay: Smell
   possibleTriggers:
   - triggerType: 1
     conditionsStats:

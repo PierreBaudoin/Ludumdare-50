@@ -20,17 +20,17 @@ MonoBehaviour:
   - statName: HUNGER
     maxValue: 100
     depressionRate: 0.1
-    actualValue: 92.27022
+    actualValue: 96.21077
   - statName: FATIGUE
     maxValue: 100
     depressionRate: 0.01
-    actualValue: 99.22624
+    actualValue: 99.62267
   - statName: HYGIENE
     maxValue: 100
     depressionRate: 0.001
-    actualValue: 99.883026
+    actualValue: 99.94762
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 22.701931
+    actualValue: 52.10809
   traits: []
