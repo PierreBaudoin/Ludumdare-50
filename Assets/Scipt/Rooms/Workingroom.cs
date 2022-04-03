@@ -15,7 +15,7 @@ public class Workingroom : Room
         currentScore += GetProductivity(character);
     }
 
-    private float GetProductivity(Character character)
+    public float GetProductivity(Character character)
     {
         float productivity;
 
