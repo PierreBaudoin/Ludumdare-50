@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         {
             FinishGame();
         }
+        if (gameTimerfloat <= 800)
+            SoundManager2D.StartEndMusic();
 
         hour = Mathf.FloorToInt(gameTimerfloat/60);
         minute = Mathf.FloorToInt(gameTimerfloat % 60);
@@ -115,5 +117,6 @@ public class GameManager : MonoBehaviour
     {
         gameOverScreen.gameObject.SetActive(true);
         gameOverScreen.StartGameOverSequence(score);
+        SoundManager2D.StartMenuMusic();
     }
 }

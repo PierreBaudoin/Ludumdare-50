@@ -2811,6 +2811,7 @@ MonoBehaviour:
   characterData: {fileID: 11400000, guid: c6387a6b99892074cbe8bfb8b99d4131, type: 2}
   model: {fileID: 3728453704373949131}
   charAnim: {fileID: 4752512607155788146}
+  grabClip: {fileID: 8300000, guid: 451cb4947ae6c8b4497a576525c70372, type: 3}
 --- !u!136 &3728453703719994956
 CapsuleCollider:
   m_ObjectHideFlags: 0
