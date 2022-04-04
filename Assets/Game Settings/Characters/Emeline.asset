@@ -34,6 +34,6 @@ MonoBehaviour:
     depressionRate: 1.5
     actualValue: 28.36273
   traits:
-  - ANGER
+  - STRESSED
   - MASCOT
   - CHEF

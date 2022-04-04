@@ -34,6 +34,6 @@ MonoBehaviour:
     depressionRate: 0.5
     actualValue: 100
   traits:
-  - 'ANGER '
+  - STRESSED
   - ALCOOLIC
   - WEED-USER
