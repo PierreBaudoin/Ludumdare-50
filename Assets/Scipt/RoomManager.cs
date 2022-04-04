@@ -13,10 +13,9 @@ public class RoomManager : MonoBehaviour
     // Room.?????
     public void LightOn (Room roomSelected){
         foreach (Room room in rooms){
-            if (room != roomSelected) {roomSelected.SetVisibility(false);}
-            else {roomSelected.SetVisibility(true);}    
-        }
-        
+            if (room != roomSelected) {room.SetVisibility(false);}
+            else {room.SetVisibility(true);}    
+        }  
     }
 
 

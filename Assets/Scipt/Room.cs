@@ -65,7 +65,8 @@ public class Room : MonoBehaviour
         {
             foreach (Character character in validPositions.Values)
             {
-                character.Appear();
+                if (character != null)
+                    character.Appear();
             }
         }
         if (hasAnimator)
