@@ -21636,6 +21636,15 @@ MonoBehaviour:
   minTimerBetweenEvent: 15
   maxTimerBetweenEvent: 20
   EventPopUpGameObject: {fileID: 1165098637}
+  dialogBoxEvents:
+  - {fileID: 11400000, guid: 7a20fc7f3c7d6e841bd9db1337fee85a, type: 2}
+  - {fileID: 11400000, guid: 55d47c8c81fb2ee41a1ae3d2a82999b2, type: 2}
+  - {fileID: 11400000, guid: 319929718355602409796a523bbf6f43, type: 2}
+  - {fileID: 11400000, guid: 9fca821ce76de6841ba041f6a799979b, type: 2}
+  - {fileID: 11400000, guid: 255361978a0a9594a92874e6b26d0677, type: 2}
+  - {fileID: 11400000, guid: ce3fd941fc1217348b931a6fe2c3d44d, type: 2}
+  - {fileID: 11400000, guid: 62858a73a887f7447aba75b221745bc1, type: 2}
+  - {fileID: 11400000, guid: e27afc0a8bc54fe40b83070769d93f59, type: 2}
 --- !u!114 &1283688056
 MonoBehaviour:
   m_ObjectHideFlags: 0

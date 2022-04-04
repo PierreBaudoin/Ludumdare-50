@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 
 public class EventManager : MonoBehaviour
@@ -11,7 +10,7 @@ public class EventManager : MonoBehaviour
     public float maxTimerBetweenEvent = 20.0f;
 
     [SerializeField] private GameObject EventPopUpGameObject;
-    private List<DialogBoxEvent> dialogBoxEvents;
+    [SerializeField] private List<DialogBoxEvent> dialogBoxEvents;
     private List<DialogBoxEvent> usedEffects;
     private bool launchEvent = false;
 
@@ -27,7 +26,6 @@ public class EventManager : MonoBehaviour
         }
         instance = this;
 
-        GatherDialogueBoxEvents();
         usedEffects = new List<DialogBoxEvent>();
         (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
     }
@@ -82,19 +80,6 @@ public class EventManager : MonoBehaviour
         t.Play(target);
         DisplayEvent(d);
         usedEffects.Add(d);
-    }
-
-    private void GatherDialogueBoxEvents()
-    {
-        string[] guids = AssetDatabase.FindAssets("t:"+ typeof(DialogBoxEvent).Name);
-        
-        dialogBoxEvents = new List<DialogBoxEvent>();
-        for(int i =0;i<guids.Length;i++) 
-        {
-            string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-            DialogBoxEvent d = AssetDatabase.LoadAssetAtPath<DialogBoxEvent>(path);
-            if(d.useInGame) { dialogBoxEvents.Add(d); }
-        }
     }
 
     public void DisplayEvent(DialogBoxEvent d)
