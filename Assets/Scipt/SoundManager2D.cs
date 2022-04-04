@@ -22,6 +22,7 @@ public class SoundManager2D : MonoBehaviour
         {
             Destroy(this);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public static void PlaySFX(AudioClip clip)
