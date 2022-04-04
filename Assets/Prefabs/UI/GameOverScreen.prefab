@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 8324268247748836386}
   - component: {fileID: 8324268247748836385}
   m_Layer: 5
-  m_Name: by User (1)
+  m_Name: Comment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,6 +1961,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb9b4fc4c62d5941897225750449946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuScene:
+    m_AssetGUID: 79ce38f3bff626849b22c6fee88984ec
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  userNames:
+  - {fileID: 8324268248228005899}
+  - {fileID: 8324268248409900297}
+  - {fileID: 8324268248764911103}
+  userComments:
+  - {fileID: 8324268247748836385}
+  - {fileID: 8324268248551374144}
+  - {fileID: 8324268249482880078}
+  gameName: {fileID: 8324268249536138112}
+  namesGood:
+  - by Sid Meier
+  - by John Romero
+  - by Shigeru Miyamoto
+  namesAverage:
+  - by SuperJammer995
+  - by Boblennon
+  - "by AirwickMa\xFCger"
+  namesBad:
+  - Keving874
+  - 4NITEGAAMEER
+  - Anonymous998716549877168
+  commentsGood:
+  - This was so fun I shat my pants.
+  - The best game since Minecraft.
+  - '!!!!!!!! SOOOO COOOOOL !!!!!!!!'
+  commentsAverage:
+  - This was fun! Kind of buggy at times
+  - METAAAAAAAAAAAAAAAAL!!!!!!!!!!!!!!!!!!!
+  - I like it.
+  commentsBad:
+  - game not working
+  - FREE VBUCKS HERE!!!! -> shorturl.at/eAKT6
+  - this is really bad, even for a game jam...
+  gameNames:
+  - 'Name: Jam Hero'
+  - 'Name: Rio de Jamiro'
+  - 'Name: SUPERHOT'
 --- !u!1 &8324268248228005897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,7 +2102,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2482,7 +2524,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2795,7 +2837,7 @@ GameObject:
   - component: {fileID: 8324268248551374145}
   - component: {fileID: 8324268248551374144}
   m_Layer: 5
-  m_Name: by User (1)
+  m_Name: Comment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3531,7 +3573,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -5331,7 +5373,7 @@ GameObject:
   - component: {fileID: 8324268249482880079}
   - component: {fileID: 8324268249482880078}
   m_Layer: 5
-  m_Name: by User (1)
+  m_Name: Comment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

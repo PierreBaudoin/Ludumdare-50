@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     public static MenuManager instance;
     public AssetReference defaultPage;
     private List<MenuPage> pageList;
+    public Transform canvas;
 
     void Awake()
     {
@@ -47,7 +48,7 @@ public class MenuManager : MonoBehaviour
     private void OnDefaultLoaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<GameObject> gameObjectOperationHandle)
     {
         GameObject g = gameObjectOperationHandle.Result;
-        GameObject o = Instantiate(g, FindObjectOfType<Canvas>().transform);
+        GameObject o = Instantiate(g, canvas);
         this.SwapToPage(o.GetComponent<MenuPage>());
     }
 

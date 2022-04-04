@@ -116,7 +116,8 @@ public class GameManager : MonoBehaviour
     private void FinishGame()
     {
         gameOverScreen.gameObject.SetActive(true);
-        gameOverScreen.StartGameOverSequence(score);
+        float normalizedScore = score / scoreSlider.maxValue;
+        gameOverScreen.StartGameOverSequence(normalizedScore);
         SoundManager2D.StartMenuMusic();
     }
 }
