@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 176836102}
   - component: {fileID: 176836104}
   - component: {fileID: 176836103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 344212342}
   - component: {fileID: 344212344}
   - component: {fileID: 344212343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spotlight-bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.59674263, g: 0.7503403, b: 0.8490566, a: 1}
+  m_Color: {r: 0.5801887, g: 0.8466415, b: 1, a: 1}
   m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 80.86099
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 1636069047}
   - component: {fileID: 1636069046}
   - component: {fileID: 1636069045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WorldCanvas Shower)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 1806714629}
   - component: {fileID: 1806714631}
   - component: {fileID: 1806714630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,13 +438,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2002349524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2002349524
 Transform:
   m_ObjectHideFlags: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 1263174320250304340}
   - component: {fileID: 6893926161935608795}
   - component: {fileID: 4163804758354566823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spotlight-bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1344683762668924098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8058560363385618684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: transforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8058560363467378779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 8058560363944942259}
   - component: {fileID: 8058560363944942258}
   - component: {fileID: 8058560363944942257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 8058560363956235417}
   - component: {fileID: 8058560363956235418}
   - component: {fileID: 1386497987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +830,7 @@ MonoBehaviour:
   toDeactivateWhenInvisible: []
   animatorParameter: show_room
   statName: HYGIENE
-  boostRate: 5
+  boostRate: 30
 --- !u!95 &1386497987
 Animator:
   serializedVersion: 4
