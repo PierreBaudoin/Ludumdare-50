@@ -46,16 +46,15 @@ namespace Modules.Translations.Controllers
         public VoidEvent OnLanguageChange;
 
 
+        /// <summary>
+        /// Translation Settings reference
+        /// >/summary>
+        [SerializeField] private TranslationSettings _settings;
 
         /// <summary>
         /// The current loaded lang iso
         /// </summary>
         private string _currentLoadedLangIso;
-
-        /// <summary>
-        /// Translation Settings reference
-        /// >/summary>
-        private TranslationSettings _settings;
 
         /// <summary>
         /// Translation data collector reference
@@ -68,7 +67,6 @@ namespace Modules.Translations.Controllers
         void Awake()
         {
             this.singletonSetUp();
-            this.findSettings();
 
             this._collector = GetComponent<TranslationDataCollector>();
             this._currentLoadedLangIso = this._settings.GetDefaultLanguage().isoCode;
@@ -95,35 +93,6 @@ namespace Modules.Translations.Controllers
             else
             {
                 TranslationManager.instance = this;
-            }
-        }
-
-        /// <summary>
-        /// Get a reference of the TranslationSettings instance
-        /// </summary>
-        private void findSettings()
-        {
-            string[] guids = AssetDatabase.FindAssets("t:"+ typeof(TranslationSettings).Name);
-
-            if(guids.Length == 1)
-            {
-                this._settings = AssetDatabase.LoadAssetAtPath<TranslationSettings>(AssetDatabase.GUIDToAssetPath(guids[0]));
-            }
-            else
-            {
-                if(guids.Length == 0)
-                {
-                    Debug.LogError("No TranslationSettings instance detected");
-                }
-                else
-                {
-                    string errorMessage = "multiple TranslationSettings intances detected :";
-                    foreach(string s in guids)
-                    {
-                        errorMessage += "\n" + AssetDatabase.GUIDToAssetPath(s);
-                    }
-                    Debug.LogError(errorMessage);   
-                }
             }
         }
 

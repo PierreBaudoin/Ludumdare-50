@@ -53,7 +53,7 @@ public class GameOverScreen : MonoBehaviour
             SetTextsInUI(userComments, commentsGood);
             gameName.text = gameNames[0];
         }
-        animator.SetFloat("score", score);
+        animator.SetFloat("Score", score);
         animator.SetBool("start", true);
     }
 
