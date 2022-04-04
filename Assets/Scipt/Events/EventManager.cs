@@ -40,7 +40,7 @@ public class EventManager : MonoBehaviour
                         {
                             if(d.useOncePerGame == false)
                             {
-                                PlayDialogBoxEffect(d,c,t);
+                                //PlayDialogBoxEffect(d,c,t);
                             }
                         }
                         else
