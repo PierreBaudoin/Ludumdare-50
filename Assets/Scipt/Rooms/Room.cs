@@ -73,8 +73,6 @@ public class Room : MonoBehaviour
         {
             roomAnimator.SetBool(animatorParameter, visibility);
         }
-        
-        TutorialManager.instance.ShowTutoView(tutoView.GetComponent<TutorialViewController>());
     }
 
     public virtual Transform AddCharacter(Character character)

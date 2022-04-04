@@ -56,8 +56,16 @@ public class Workingroom : Room
             b.transform.SetParent(GameManager.instance.mainCanvas);
         }
 
-        b.Init(slotsTransform[Random.Range(0, slotsTransform.Length)].position, this);
-        b.gameObject.SetActive(true);
+        int index = Random.Range(0, slotsTransform.Length);
+        if(validPositions[slotsTransform[index]] != null)
+        {
+            b.Init(slotsTransform[index].position, this);
+            b.gameObject.SetActive(true);    
+        }
+        else
+        {
+            b = PoolOutBullet();
+        }
         
         return b;
     }

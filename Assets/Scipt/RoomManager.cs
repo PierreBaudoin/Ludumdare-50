@@ -13,8 +13,15 @@ public class RoomManager : MonoBehaviour
     // Room.?????
     public void LightOn (Room roomSelected){
         foreach (Room room in rooms){
-            if (room != roomSelected) {roomSelected.SetVisibility(false);}
-            else {roomSelected.SetVisibility(true);}    
+            if (room != roomSelected) 
+            {
+                roomSelected.SetVisibility(false);
+            }
+            else 
+            {
+                roomSelected.SetVisibility(true);
+                TutorialManager.instance.ShowTutoView(roomSelected.tutoView.GetComponent<TutorialViewController>());
+            }    
         }
         
     }

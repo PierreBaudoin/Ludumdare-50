@@ -10,13 +10,16 @@ public class GameOverScreen : MonoBehaviour
     private Animator animator;
     public AssetReference menuScene;
 
+    private float score;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    public void StartGameOverSequence()
+    public void StartGameOverSequence(float score)
     {
+        this.score = score;
         animator.SetBool("start", true);
     }
 
@@ -24,7 +27,7 @@ public class GameOverScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            StartGameOverSequence();
+            StartGameOverSequence(score);
         }
     }
 

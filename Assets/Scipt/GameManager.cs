@@ -16,12 +16,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameTimetxt;
     public Workingroom workingroom;
     public GameObject arrow;
+    public GameOverScreen gameOverScreen;
+    public GameObject characterPrefab;
+    public Transform characterParent;
+    public List<CharacterData> characterdata;
     public float timeScale = 10.0f;
     private float gameTimerfloat = 2880;
+    private bool isStarted = false;
     private int hour;
     private int minute;
-    
-
     private float score;
 
     void Awake()
@@ -45,6 +48,10 @@ public class GameManager : MonoBehaviour
     void Update (){
         if (gameTimerfloat >= 0){
             gameTimerfloat -= Time.deltaTime * timeScale;
+        }
+        else
+        {
+            FinishGame();
         }
 
         hour = Mathf.FloorToInt(gameTimerfloat/60);
@@ -83,4 +90,25 @@ public class GameManager : MonoBehaviour
         scoreSlider.value = score;
     }
 
+    public void StartGame()
+    {
+        isStarted = true;
+
+        foreach(CharacterData c in characterdata)
+        {
+            GameObject g = Instantiate(characterPrefab, characterParent);
+            g.GetComponent<Character>().characterData = c;
+        }
+    }
+
+    public bool isGameStarded()
+    {
+        return isStarted;
+    }
+
+    private void FinishGame()
+    {
+        gameOverScreen.gameObject.SetActive(true);
+        gameOverScreen.StartGameOverSequence(score);
+    }
 }
