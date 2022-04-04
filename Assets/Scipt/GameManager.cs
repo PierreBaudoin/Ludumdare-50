@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void Score (float bulletValue)
     {
-        background.GetComponent<Animation>().Play();
+        //background.GetComponent<Animation>().Play();
         score += bulletValue;
         scoreSlider.value = score;
     }

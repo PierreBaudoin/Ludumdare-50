@@ -15,6 +15,9 @@ public class EventManager : MonoBehaviour
     private List<DialogBoxEvent> usedEffects;
     private bool launchEvent = false;
 
+    private string sourceCharacterName;
+    private string affectedCharacterName;
+
     void Awake()
     {
         if(instance != null)
@@ -63,6 +66,7 @@ public class EventManager : MonoBehaviour
                         else
                         {
                             PlayDialogBoxEffect(d, c, t);
+                            sourceCharacterName = c.characterData.characterName;
                             launchEvent = false;
                             (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
                         }
@@ -74,6 +78,7 @@ public class EventManager : MonoBehaviour
 
     private void PlayDialogBoxEffect(DialogBoxEvent d, Character target, TargetEffectPair t)
     {
+        affectedCharacterName = target.characterData.characterName;
         t.Play(target);
         DisplayEvent(d);
         usedEffects.Add(d);
@@ -95,6 +100,9 @@ public class EventManager : MonoBehaviour
     public void DisplayEvent(DialogBoxEvent d)
     {
         EventPopUpGameObject.GetComponent<EventPopUp>().gameObject.SetActive(true);
-        EventPopUpGameObject.GetComponent<EventPopUp>().Init(d.textToDisplay);
+        string result = d.textToDisplay;
+        d.textToDisplay.Replace("c1", sourceCharacterName);
+        d.textToDisplay.Replace("c2", affectedCharacterName);
+        EventPopUpGameObject.GetComponent<EventPopUp>().Init(result);
     }
 }
