@@ -40,10 +40,11 @@ public class ScoreBullet : MonoBehaviour
 
 
     void GoToScoreBar() {
-        if(Mathf.Abs(rect.position.x - rectTargetPosition.x + rect.position.y - rectTargetPosition.y) <= 5f)
+        if(Mathf.Abs(rect.position.x - rectTargetPosition.x + rect.position.y - rectTargetPosition.y) <= 25f)
         {
             GameManager.instance.Score(5);
-            room?.PoolInBullet(this);
+            //room?.PoolInBullet(this);
+            Destroy(this.gameObject);
         }
         else
         {
