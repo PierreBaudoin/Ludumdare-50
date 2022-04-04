@@ -24983,10 +24983,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 874392370}
     m_Modifications:
-    - target: {fileID: 58671484, guid: be276328fde71244580fbf0b1c59495b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1637764549, guid: be276328fde71244580fbf0b1c59495b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -25112,11 +25108,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tutorial view
-      objectReference: {fileID: 0}
-    - target: {fileID: 6503890555053237828, guid: be276328fde71244580fbf0b1c59495b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be276328fde71244580fbf0b1c59495b, type: 3}
