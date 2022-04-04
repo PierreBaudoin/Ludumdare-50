@@ -27,7 +27,7 @@ public class RoomManager : MonoBehaviour
             if (room != roomSelected) {room.SetVisibility(false);}
             else {
                 room.SetVisibility(true);
-                //TutorialManager.instance.ShowTutoView(room.tutoView.GetComponent<TutorialViewController>());
+                TutorialManager.instance.ShowTutoView(room.tutoView.GetComponent<TutorialViewController>());
             }    
         }  
     }

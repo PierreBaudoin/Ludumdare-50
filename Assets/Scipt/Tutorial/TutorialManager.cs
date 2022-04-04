@@ -26,6 +26,7 @@ public class TutorialManager : MonoBehaviour
         if(showedTutoView.Contains(view) == false)
         {
             view.gameObject.SetActive(true);
+            showedTutoView.Add(view);
         }
     }
 }
