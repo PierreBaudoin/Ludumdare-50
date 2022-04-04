@@ -35773,6 +35773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 329889624}
     m_Modifications:
+    - target: {fileID: 824709029, guid: a082233e5dcdcfe4ab65dca234f5cb16, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1806379008, guid: a082233e5dcdcfe4ab65dca234f5cb16, type: 3}
       propertyPath: m_SizeDelta.x
       value: 656.9
@@ -35964,6 +35968,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.12646852
       objectReference: {fileID: 0}
+    - target: {fileID: 2073334968, guid: c7d80f9079571ba45a6981ccdf71e561, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2837513844006342276, guid: c7d80f9079571ba45a6981ccdf71e561,
         type: 3}
       propertyPath: m_RootOrder
@@ -36127,6 +36135,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1457624864, guid: 1a1a39a6af8acd942acd492541955578, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3341909644837378624, guid: 1a1a39a6af8acd942acd492541955578,
         type: 3}
       propertyPath: tutoView
@@ -36226,6 +36238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 329889624}
     m_Modifications:
+    - target: {fileID: 1011789814, guid: df6657b3f2ac18c4f978ec7784cf0452, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1128517416, guid: df6657b3f2ac18c4f978ec7784cf0452, type: 3}
       propertyPath: m_Name
       value: Button image target
@@ -36381,6 +36397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 329889624}
     m_Modifications:
+    - target: {fileID: 1071125826, guid: a2a9c414bedcdab43bb59a64c97ee46e, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614157610, guid: a2a9c414bedcdab43bb59a64c97ee46e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 527.8
@@ -36583,6 +36603,10 @@ PrefabInstance:
     - target: {fileID: 176836103, guid: 62eba845dbfd31249812d4fbad983d7f, type: 3}
       propertyPath: m_Color.r
       value: 0.022694906
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806714630, guid: 62eba845dbfd31249812d4fbad983d7f, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8058560363956235416, guid: 62eba845dbfd31249812d4fbad983d7f,
         type: 3}
