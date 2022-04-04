@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     public CharacterData characterData;
     public Transform model;
     public Animator charAnim;
+    public AudioClip dropClip;
     private bool isDragged = false;
     private  Room currentRoom;
     private Transform currentTransform;
@@ -176,6 +177,7 @@ public class Character : MonoBehaviour
 
     private void OnDroppedInRoom(Room target)
     {
+        SoundManager2D.PlaySFX(dropClip);
         var type = target.GetType().ToString();
         Debug.Log("dropped in room : " + type);
         switch (type)

@@ -10,6 +10,7 @@ public class GeneralMenuPage : MenuPage
     public void ClickPlay()
     {
         Addressables.LoadSceneAsync(gameScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        SoundManager2D.StartGameMusic();
     }
 
     public void ClickOption()
