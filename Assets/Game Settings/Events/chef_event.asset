@@ -22,11 +22,11 @@ MonoBehaviour:
   - triggerType: 0
     conditionsStats:
     - statName: MORAL
-      statValue: 80
+      statValue: 75
       comparator: 1
     - statName: HUNGER
-      statValue: 80
-      comparator: 1
+      statValue: 75
+      comparator: 0
     conditionsTraits:
     - traitName: CHEF
   targetEffectPairs:

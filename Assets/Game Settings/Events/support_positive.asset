@@ -22,10 +22,10 @@ MonoBehaviour:
   - triggerType: 0
     conditionsStats:
     - statName: FATIGUE
-      statValue: 30
+      statValue: 50
       comparator: 0
     - statName: HUNGER
-      statValue: 30
+      statValue: 50
       comparator: 0
     conditionsTraits:
     - traitName: SUPPORT

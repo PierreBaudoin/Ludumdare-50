@@ -22,7 +22,7 @@ MonoBehaviour:
     conditionsStats:
     - statName: MORAL
       statValue: 75
-      comparator: 1
+      comparator: 0
     conditionsTraits:
     - traitName: MASCOT
   targetEffectPairs:

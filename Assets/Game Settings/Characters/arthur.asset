@@ -20,20 +20,20 @@ MonoBehaviour:
   - statName: HUNGER
     maxValue: 100
     depressionRate: 0.5
-    actualValue: 28.36273
+    actualValue: 15.892668
   - statName: FATIGUE
     maxValue: 100
     depressionRate: 2
-    actualValue: 28.36273
+    actualValue: 11.8105955
   - statName: HYGIENE
     maxValue: 100
     depressionRate: 1
-    actualValue: 28.36273
+    actualValue: 1
   - statName: MORAL
     maxValue: 100
     depressionRate: 1.5
-    actualValue: 28.36273
+    actualValue: 1
   traits:
-  - DESIGNER
-  - MASTERMIND
-  - ALCOOLIC
+  - WEED USER
+  - ANGER
+  - SUPPORT

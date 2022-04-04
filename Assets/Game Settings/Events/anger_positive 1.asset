@@ -22,10 +22,23 @@ MonoBehaviour:
   - triggerType: 0
     conditionsStats:
     - statName: MORAL
-      statValue: 90
+      statValue: 50
       comparator: 1
+    - statName: FATIGUE
+      statValue: 50
+      comparator: 0
     conditionsTraits:
     - traitName: ANGER
+  - triggerType: 0
+    conditionsStats:
+    - statName: MORAL
+      statValue: 50
+      comparator: 1
+    - statName: FATIGUE
+      statValue: 50
+      comparator: 0
+    conditionsTraits:
+    - traitName: STRESSED
   targetEffectPairs:
   - targetingRule: 3
     statBonusEffects:
