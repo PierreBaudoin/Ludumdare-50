@@ -20,6 +20,7 @@ public class Room : MonoBehaviour
 
     private Animator roomAnimator;
     private bool hasAnimator = false;
+    private bool visibility = false;
 
     protected virtual void Start()
     {
@@ -60,6 +61,7 @@ public class Room : MonoBehaviour
 
     public void SetVisibility(bool visibility)
     {
+        this.visibility =  visibility;
         SetActiveAll(toActivateWhenVisible, visibility);
         SetActiveAll(toDeactivateWhenVisible, !visibility);
         SetActiveAll(toActivateWhenInvisible, !visibility);
@@ -76,10 +78,17 @@ public class Room : MonoBehaviour
         {
             roomAnimator.SetBool(animatorParameter, visibility);
         }
+        foreach(Character c in validPositions.Values)
+        {
+            if (visibility) c?.Appear();
+            if (!visibility) c?.Disappear();
+        }
     }
 
     public virtual Transform AddCharacter(Character character)
     {
+        if (visibility) character?.Appear();
+        if (!visibility) character?.Disappear();
         Transform result;
         if (IsRoomFull())
             return null;

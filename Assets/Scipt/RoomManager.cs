@@ -7,6 +7,17 @@ public class RoomManager : MonoBehaviour
     public List<Room> rooms;
 
 
+    void Start()
+    {
+        foreach(Room r in rooms)
+        {
+            if (r.GetType() == typeof(Workingroom))
+            {
+                r.SetVisibility(true);
+            }
+        }
+    }
+
     //OnClick() => Open Room, shutoff the other one. 
 
     // Room.SetVisibility()
@@ -16,18 +27,13 @@ public class RoomManager : MonoBehaviour
             if (room != roomSelected) {room.SetVisibility(false);}
             else {
                 room.SetVisibility(true);
-                TutorialManager.instance.ShowTutoView(room.tutoView.GetComponent<TutorialViewController>());
+                //TutorialManager.instance.ShowTutoView(room.tutoView.GetComponent<TutorialViewController>());
             }    
         }  
     }
 
 
 
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
