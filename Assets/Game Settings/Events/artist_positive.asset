@@ -16,7 +16,8 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: Beautiful Asset
+  textToDisplay: 'Beautiful Asset : An ARTIST mabe something really amazing, now
+    everyone''s MORAL is rising !'
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
