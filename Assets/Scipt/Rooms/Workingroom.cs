@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Workingroom : Room
 {
+    public float powerFactor = 0.5f;
+
     public float currentScore = 0;
     public int bulletValue = 5;
     public GameObject bulletPrefab;
@@ -12,20 +14,21 @@ public class Workingroom : Room
 
     public override void UseRoomUpdate(Character character)
     {
-        currentScore += GetProductivity(character);
+        currentScore += GetProductivity(character) * Time.deltaTime;
     }
 
     public float GetProductivity(Character character)
     {
         float productivity;
 
-        float hunger = GetStat(character.stats, hungerName).actualValue /100;
-        float fatigue = GetStat(character.stats, fatigueName).actualValue /100;
-        float hygiene = GetStat(character.stats, hygieneName).actualValue /100;
-        float moral = GetStat(character.stats, moralName).actualValue /100;
+        float hunger = GetStat(character.stats, hungerName).actualValue;
+        float fatigue = GetStat(character.stats, fatigueName).actualValue;
+        float hygiene = GetStat(character.stats, hygieneName).actualValue;
+        float moral = GetStat(character.stats, moralName).actualValue;
 
-        productivity = Mathf.Pow(hunger * fatigue * hygiene * moral * hunger * fatigue * hygiene * moral, 1/10) / 10;
-
+        //productivity = Mathf.Pow(hunger * fatigue * hygiene * moral * hunger * fatigue * hygiene * moral, powerFactor) / powerFactor;
+        productivity = character.characterData.GetProductivity();
+        Debug.LogWarning (character.characterData.characterName + " => " + productivity);
         return productivity;
     }
 
@@ -50,7 +53,7 @@ public class Workingroom : Room
         else
         {
             b = Instantiate(bulletPrefab).GetComponent<ScoreBullet>();
-            b.transform.SetParent(GameManager.instance.bulletTraget.parent);
+            b.transform.SetParent(GameManager.instance.mainCanvas);
         }
 
         b.Init(slotsTransform[Random.Range(0, slotsTransform.Length)].position, this);

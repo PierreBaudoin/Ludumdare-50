@@ -36,19 +36,9 @@ public class Character : MonoBehaviour
     }
 
     public Stat[] GetStats()
-    { /*
-        string[] guids = AssetDatabase.FindAssets("t:"+ typeof(CharacterData).Name);
-        CharacterData[] a = new CharacterData[guids.Length];
-
-        for(int i =0;i<guids.Length;i++) 
-        {
-            string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-            a[i] = AssetDatabase.LoadAssetAtPath<CharacterData>(path);
-        }
- 
-        return a[0].stats;*/
+    {
         return characterData.stats;
-     }
+    }
 
     void Update()
     {

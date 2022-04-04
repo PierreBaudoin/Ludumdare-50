@@ -16,6 +16,17 @@ public class CharacterData : ScriptableObject
     };
 
     public string[] traits;
+
+
+    public float GetProductivity()
+    {
+        float result = 0.0f;
+        foreach( Stat s in stats)
+        {
+            result += s.GetFactor();
+        }
+        return result/4.0f;
+    }
 }
 
 
@@ -38,6 +49,11 @@ public class Stat
         actualValue = maxValue;
         depressionRate = defaultDepressionRate;
         lockedStat = false;
+    }
+
+    public float GetFactor()
+    {
+        return actualValue/maxValue;
     }
 
     public void LockStat(bool locked)

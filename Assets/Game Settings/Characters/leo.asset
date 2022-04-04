@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
-  m_Name: chara3
+  m_Name: leo
   m_EditorClassIdentifier: 
-  characterName: Gui
-  description: Plante verte
+  characterName: Leonardo
+  description: Pixel
   postIt: {fileID: 21300000, guid: 059105900da432647a748f908971e210, type: 3}
   profilePic: {fileID: 21300000, guid: 09543db92bcc92a47bdee7c493395ef2, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 0.01
-    actualValue: 99.22624
+    depressionRate: 0.5
+    actualValue: 28.36273
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 0.09
-    actualValue: 93.04354
+    depressionRate: 0.25
+    actualValue: 28.36273
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 0.07
-    actualValue: 94.5895
+    depressionRate: 1
+    actualValue: 28.36273
   - statName: MORAL
     maxValue: 100
-    depressionRate: 1
-    actualValue: 22.701931
-  traits: []
+    depressionRate: 2.5
+    actualValue: 28.36273
+  traits:
+  - ARTIST
+  - NIHILIST
+  - ALCOOLIC
