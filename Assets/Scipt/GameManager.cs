@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameTimetxt;
     public Workingroom workingroom;
     public GameObject arrow;
+    public float timeScale = 10.0f;
     private float gameTimerfloat = 2880;
     private int hour;
     private int minute;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     }
     void Update (){
         if (gameTimerfloat >= 0){
-            gameTimerfloat -= Time.deltaTime * 5;
+            gameTimerfloat -= Time.deltaTime * timeScale;
         }
 
         hour = Mathf.FloorToInt(gameTimerfloat/60);
@@ -55,9 +56,9 @@ public class GameManager : MonoBehaviour
         foreach(Character chara in characters){
             totalProductivity += workingroom.GetProductivity(chara);
         }
-        Debug.Log ("prod1 : " + totalProductivity);
+        //Debug.Log ("prod1 : " + totalProductivity);
         totalProductivity /= characters.Count;
-        Debug.Log ("prod : " + totalProductivity);
+        //Debug.Log ("prod : " + totalProductivity);
         if (totalProductivity >= .75f){
             if (!arrow.activeInHierarchy){
                 arrow.SetActive(true);

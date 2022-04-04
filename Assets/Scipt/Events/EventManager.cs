@@ -7,11 +7,13 @@ using UnityEditor;
 public class EventManager : MonoBehaviour
 {
     public static EventManager instance;
+    public float minTimerBetweenEvent = 15.0f;
+    public float maxTimerBetweenEvent = 20.0f;
 
     [SerializeField] private GameObject EventPopUpGameObject;
     private List<DialogBoxEvent> dialogBoxEvents;
     private List<DialogBoxEvent> usedEffects;
-
+    private bool launchEvent = false;
 
     void Awake()
     {
@@ -24,21 +26,36 @@ public class EventManager : MonoBehaviour
 
         GatherDialogueBoxEvents();
         usedEffects = new List<DialogBoxEvent>();
+        (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
     }
 
     void Update()
     {
-        foreach(Character c in GameManager.instance.characters)
+        if (launchEvent)
         {
-            foreach(DialogBoxEvent d in dialogBoxEvents)
+            CheckEvent();
+
+        }
+    }
+
+    public void SwapVariableLaunchEvent()
+    {
+        launchEvent = !launchEvent;
+    }
+
+    private void CheckEvent()
+    {
+        foreach (Character c in GameManager.instance.characters)
+        {
+            foreach (DialogBoxEvent d in dialogBoxEvents)
             {
-                if(d.IsActive(c))
+                if (d.IsActive(c))
                 {
-                    foreach(TargetEffectPair t in d.targetEffectPairs)
+                    foreach (TargetEffectPair t in d.targetEffectPairs)
                     {
-                        if(usedEffects.Contains(d))
+                        if (usedEffects.Contains(d))
                         {
-                            if(d.useOncePerGame == false)
+                            if (d.useOncePerGame == false)
                             {
                                 //PlayDialogBoxEffect(d,c,t);
                             }
@@ -46,6 +63,8 @@ public class EventManager : MonoBehaviour
                         else
                         {
                             PlayDialogBoxEffect(d, c, t);
+                            launchEvent = false;
+                            (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
                         }
                     }
                 }

@@ -96,7 +96,7 @@ public class Character : MonoBehaviour
                     if (currentRoom != null)
                     {
                         currentRoom.EndUseRoom(this);
-                        currentRoom.RemoveCharacter(this);
+                        currentRoom?.RemoveCharacter(this);
                     }
                     
                     JoinRoom(newRoom);

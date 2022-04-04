@@ -28,7 +28,7 @@ public class Workingroom : Room
 
         //productivity = Mathf.Pow(hunger * fatigue * hygiene * moral * hunger * fatigue * hygiene * moral, powerFactor) / powerFactor;
         productivity = character.characterData.GetProductivity();
-        Debug.LogWarning (character.characterData.characterName + " => " + productivity);
+        //Debug.LogWarning (character.characterData.characterName + " => " + productivity);
         return productivity;
     }
 
