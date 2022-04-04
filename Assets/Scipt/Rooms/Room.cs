@@ -10,6 +10,7 @@ public class Room : MonoBehaviour
     public GameObject[] toDeactivateWhenVisible;
     public GameObject[] toActivateWhenInvisible;
     public GameObject[] toDeactivateWhenInvisible;
+    public GameObject tutoView;
 
     public string animatorParameter = "show_room";
     public Dictionary<Transform, Character> validPositions;
@@ -69,6 +70,8 @@ public class Room : MonoBehaviour
         {
             roomAnimator.SetBool(animatorParameter, visibility);
         }
+        
+        TutorialManager.instance.ShowTutoView(tutoView.GetComponent<TutorialViewController>());
     }
 
     public virtual Transform AddCharacter(Character character)
