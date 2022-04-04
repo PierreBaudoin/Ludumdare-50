@@ -9,7 +9,7 @@ public class GeneralMenuPage : MenuPage
     private GameObject option, leave, credits;
     public void ClickPlay()
     {
-        Addressables.LoadSceneAsync(draftScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        Addressables.LoadSceneAsync(gameScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     public void ClickOption()
