@@ -86,7 +86,7 @@ public class Character : MonoBehaviour
             //Si même room
             if (newRoom == currentRoom){
                 StartCoroutine(TravelBack(currentTransform.position));
-                transform.rotation = currentTransform.rotation;
+                model.right = currentTransform.forward;
                 OnDroppedInRoom(currentRoom);
                 return;
             }
@@ -105,7 +105,8 @@ public class Character : MonoBehaviour
                 else //Si la room est pleine 
                 {   
                     StartCoroutine(TravelBack(currentTransform.position));
-                    transform.rotation = currentTransform.rotation;
+                    model.right = currentTransform.forward;
+
                 }
             }
             
@@ -133,7 +134,7 @@ public class Character : MonoBehaviour
             OnDroppedInRoom(room);
         this.currentTransform = room.AddCharacter(this);
         StartCoroutine(TravelBack(currentTransform.position));
-        transform.rotation = currentTransform.rotation;
+        model.right = currentTransform.forward;
         room.StartUseRoom(this);
         currentRoom = room;
     }
