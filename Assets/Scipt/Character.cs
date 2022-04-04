@@ -30,11 +30,6 @@ public class Character : MonoBehaviour
         JoinRoom(GameManager.instance.workingroom);
     }
 
-    void OnDestroy()
-    {
-        GameManager.instance.characters.Remove(this);
-    }
-
     public Stat[] GetStats()
     {
         return characterData.stats;

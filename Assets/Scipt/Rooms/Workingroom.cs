@@ -59,8 +59,8 @@ public class Workingroom : Room
         int index = Random.Range(0, slotsTransform.Length);
         if(validPositions[slotsTransform[index]] != null)
         {
-            b.Init(slotsTransform[index].position, this);
             b.gameObject.SetActive(true);    
+            b.Init(slotsTransform[index].position, this);
         }
         else
         {
@@ -72,7 +72,7 @@ public class Workingroom : Room
 
     public void PoolInBullet(ScoreBullet bullet)
     {
-        bullet.gameObject.SetActive(false);
         bulletPool.Add(bullet);
+        bullet.gameObject.SetActive(false);
     }
 }

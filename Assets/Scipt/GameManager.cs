@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
+        characters = new List<Character>();
     }
 
     void Start()

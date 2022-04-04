@@ -43,7 +43,7 @@ public class ScoreBullet : MonoBehaviour
         if(Mathf.Abs(rect.position.x - rectTargetPosition.x + rect.position.y - rectTargetPosition.y) <= 5f)
         {
             GameManager.instance.Score(5);
-            room.PoolInBullet(this);
+            room?.PoolInBullet(this);
         }
         else
         {
