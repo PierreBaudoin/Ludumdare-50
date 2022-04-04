@@ -16,26 +16,22 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: Good spleef
+  textToDisplay: Little Attentions
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
     - statName: FATIGUE
-      statValue: 80
-      comparator: 1
+      statValue: 30
+      comparator: 0
     - statName: HUNGER
-      statValue: 80
-      comparator: 1
+      statValue: 30
+      comparator: 0
     conditionsTraits:
-    - traitName: WEED USER
+    - traitName: SUPPORT
   targetEffectPairs:
-  - targetingRule: 0
+  - targetingRule: 3
     statBonusEffects:
     - statName: HUNGER
-      statBonus: -10
-    - statName: MORAL
-      statBonus: 50
-  - targetingRule: 2
-    statBonusEffects:
-    - statName: MORAL
-      statBonus: 30
+      statBonus: 10
+    - statName: HYGIENE
+      statBonus: 20

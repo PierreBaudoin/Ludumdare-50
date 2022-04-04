@@ -16,13 +16,14 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: Good spleef
+  textToDisplay: 'Good spleef : one weed user decided to chiil out. He gets a moral
+    boost and is now a little bit more hungry.'
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
     - statName: FATIGUE
       statValue: 80
-      comparator: 1
+      comparator: 0
     - statName: HUNGER
       statValue: 80
       comparator: 1
