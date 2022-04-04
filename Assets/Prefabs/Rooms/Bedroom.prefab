@@ -474,14 +474,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622703477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.5}
+  m_LocalRotation: {x: -0, y: -0.7071064, z: -0, w: 0.70710725}
+  m_LocalPosition: {x: 0.71, y: 1.327, z: 3.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7416059288763421091}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1806379007
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,14 +801,13 @@ MonoBehaviour:
   slotsTransform:
   - {fileID: 870155640195106329}
   - {fileID: 1622703478}
-  toActivateWhenVisible:
-  - {fileID: 0}
+  toActivateWhenVisible: []
   toDeactivateWhenVisible:
   - {fileID: 1123947885}
   toActivateWhenInvisible:
   - {fileID: 1123947885}
-  toDeactivateWhenInvisible:
-  - {fileID: 0}
+  toDeactivateWhenInvisible: []
+  tutoView: {fileID: 0}
   animatorParameter: show_room
   statName: FATIGUE
   boostRate: 20
@@ -855,14 +854,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5792724675483314944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.51, y: 1.327, z: 1.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7416059288763421091}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &7022314442875076477
 GameObject:
   m_ObjectHideFlags: 0

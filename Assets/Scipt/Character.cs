@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     public Stat[] stats;
     public CharacterData characterData;
     public Transform model;
+    public Animator charAnim;
     private bool isDragged = false;
     private  Room currentRoom;
     private Transform currentTransform;
@@ -15,6 +16,8 @@ public class Character : MonoBehaviour
     private string[] traitList;
     private Renderer[] renderers;
     private Collider collider;
+
+    private bool initAnim = true;
 
     void Start()
     {
@@ -26,7 +29,6 @@ public class Character : MonoBehaviour
         GameManager.instance.characters.Add(this);
         renderers = model.GetComponentsInChildren<Renderer>();
         collider = GetComponent<Collider>();
-
         JoinRoom(GameManager.instance.workingroom);
     }
 
@@ -52,6 +54,7 @@ public class Character : MonoBehaviour
                 }
             }
             isDragged = true;
+            OnGrab();
         }
 
         LayerMask layerMask = LayerMask.GetMask("Floor");
@@ -83,6 +86,8 @@ public class Character : MonoBehaviour
             //Si même room
             if (newRoom == currentRoom){
                 StartCoroutine(TravelBack(currentTransform.position));
+                model.right = currentTransform.forward;
+                OnDroppedInRoom(currentRoom);
                 return;
             }
             //Si room différente
@@ -100,6 +105,8 @@ public class Character : MonoBehaviour
                 else //Si la room est pleine 
                 {   
                     StartCoroutine(TravelBack(currentTransform.position));
+                    model.right = currentTransform.forward;
+
                 }
             }
             
@@ -121,8 +128,13 @@ public class Character : MonoBehaviour
 
     private void JoinRoom(Room room)
     {
+        if (initAnim)
+            initAnim = false;
+        else
+            OnDroppedInRoom(room);
         this.currentTransform = room.AddCharacter(this);
         StartCoroutine(TravelBack(currentTransform.position));
+        model.right = currentTransform.forward;
         room.StartUseRoom(this);
         currentRoom = room;
     }
@@ -155,6 +167,47 @@ public class Character : MonoBehaviour
             renderer.enabled = false;
         }
         collider.enabled = false;
+    }
+    
+    private void OnGrab()
+    {
+        charAnim.SetTrigger("Grabbed");
+    }
+
+    private void OnDroppedInRoom(Room target)
+    {
+        var type = target.GetType().ToString();
+        Debug.Log("dropped in room : " + type);
+        switch (type)
+        {
+            case "RoomCoffee":
+                charAnim.SetTrigger("All Entries");
+                charAnim.SetTrigger("Coffee");
+                break;
+
+            case "Bedroom":
+                charAnim.SetTrigger("Bed");
+                break;
+
+            case "Bathroom":
+                charAnim.SetTrigger("All Entries");
+                charAnim.SetTrigger("Shower");
+                break;
+
+            case "Workingroom":
+                Debug.Log("dropped in room");
+                charAnim.SetTrigger("Work");
+                break;
+
+            case "Playingroom":
+                charAnim.SetTrigger("All Entries");
+                charAnim.SetTrigger("Play");
+                break;
+
+            default:
+                charAnim.SetTrigger("Idle");
+                break;
+        }
     }
 
     public void Appear()
