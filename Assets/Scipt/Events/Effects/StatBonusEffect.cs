@@ -8,6 +8,7 @@ public class StatBonusEffect : Effect
 {
     public string statName;
     public float statBonus;
+
     public override void Play(Character[] targets)
     {
         foreach(Character c in targets)
@@ -20,5 +21,10 @@ public class StatBonusEffect : Effect
                 }
             }
         }
+    }
+
+    public override void Update(Character[] targets)
+    {
+    
     }
 }
