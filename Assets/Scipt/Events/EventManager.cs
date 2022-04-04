@@ -46,27 +46,23 @@ public class EventManager : MonoBehaviour
 
     private void CheckEvent()
     {
+        print("Event");
         foreach (Character c in GameManager.instance.characters)
         {
             foreach (DialogBoxEvent d in dialogBoxEvents)
             {
                 if (d.IsActive(c))
                 {
+                    print("Active" + d.name);
                     foreach (TargetEffectPair t in d.targetEffectPairs)
                     {
-                        if (usedEffects.Contains(d))
-                        {
-                            if (d.useOncePerGame == false)
-                            {
-                                //PlayDialogBoxEffect(d,c,t);
-                            }
-                        }
-                        else
+                        if (usedEffects.Contains(d) == false)
                         {
                             PlayDialogBoxEffect(d, c, t);
                             sourceCharacterName = c.characterData.characterName;
                             launchEvent = false;
                             (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
+                            return;
                         }
                     }
                 }
@@ -76,6 +72,7 @@ public class EventManager : MonoBehaviour
 
     private void PlayDialogBoxEffect(DialogBoxEvent d, Character target, TargetEffectPair t)
     {
+        Debug.Log(d + " -- " + target.characterData.name);
         affectedCharacterName = target.characterData.characterName;
         t.Play(target);
         DisplayEvent(d);
