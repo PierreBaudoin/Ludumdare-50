@@ -17958,7 +17958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1022257329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17994,7 +17994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280766b2ffcf2b546b4d402291a6ff62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: {fileID: 1386321242}
+  description: {fileID: 0}
   debugText: {fileID: 1386321243}
 --- !u!1001 &1025032273
 PrefabInstance:
@@ -23986,7 +23986,6 @@ GameObject:
   - component: {fileID: 1386321245}
   - component: {fileID: 1386321244}
   - component: {fileID: 1386321243}
-  - component: {fileID: 1386321242}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -23994,19 +23993,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1386321242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386321241}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89a286d453e8f7488cf6d0bfb3a111b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 
 --- !u!114 &1386321243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28170,7 +28156,6 @@ GameObject:
   - component: {fileID: 1600506879}
   - component: {fileID: 1600506882}
   - component: {fileID: 1600506881}
-  - component: {fileID: 1600506880}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -28198,19 +28183,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1600506880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600506878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89a286d453e8f7488cf6d0bfb3a111b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: OK
 --- !u!114 &1600506881
 MonoBehaviour:
   m_ObjectHideFlags: 0
