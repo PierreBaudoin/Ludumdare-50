@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         scoreSlider.value = score;
         if(scoreSlider.value == scoreSlider.maxValue)
         {
-            gameTimerfloat = 0f;
+            //gameTimerfloat = 0f;
         }
     }
 
