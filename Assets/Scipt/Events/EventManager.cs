@@ -101,8 +101,8 @@ public class EventManager : MonoBehaviour
     {
         EventPopUpGameObject.GetComponent<EventPopUp>().gameObject.SetActive(true);
         string result = d.textToDisplay;
-        d.textToDisplay.Replace("c1", sourceCharacterName);
-        d.textToDisplay.Replace("c2", affectedCharacterName);
+        result = result.Replace("c1", sourceCharacterName);
+        result = result.Replace("c2", affectedCharacterName);
         EventPopUpGameObject.GetComponent<EventPopUp>().Init(result);
     }
 }

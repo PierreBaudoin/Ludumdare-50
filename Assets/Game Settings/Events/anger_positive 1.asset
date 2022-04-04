@@ -16,8 +16,8 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: 'Motivation speech : One INTENSE character made a great speech to
-    cheer everyone up, all characters forgot about their TIREDNESS.'
+  textToDisplay: 'Motivation speech : c1 made a great speech to cheer everyone up,
+    all characters forgot about their TIREDNESS.'
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
