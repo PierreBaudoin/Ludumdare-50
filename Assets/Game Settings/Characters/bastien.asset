@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
-  m_Name: chara1
+  m_Name: bastien
   m_EditorClassIdentifier: 
-  characterName: Roger
-  description: Lapin
+  characterName: Bastien
+  description: Warmachine
   postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
   profilePic: {fileID: 21300000, guid: cfcf7710e1cedbf47a1ac4f1fb066891, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 0.01
-    actualValue: 99.38259
+    depressionRate: 2
+    actualValue: 28.36273
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 0.05
-    actualValue: 96.88951
+    depressionRate: 0.25
+    actualValue: 28.36273
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 0.1
-    actualValue: 1
+    depressionRate: 1
+    actualValue: 28.36273
   - statName: MORAL
     maxValue: 100
-    depressionRate: 1
-    actualValue: 100
-  traits: []
+    depressionRate: 0.5
+    actualValue: 28.36273
+  traits:
+  - CHEF
+  - ARTIST
+  - WEED USER

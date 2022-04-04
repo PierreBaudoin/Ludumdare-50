@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
-  m_Name: chara6
+  m_Name: pierre
   m_EditorClassIdentifier: 
-  characterName: Marie
-  description: Ignorante
-  postIt: {fileID: 21300000, guid: 059105900da432647a748f908971e210, type: 3}
-  profilePic: {fileID: 21300000, guid: 08a180248deaed845ab88da88181cf19, type: 3}
+  characterName: Pierre
+  description: Caillou
+  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
+  profilePic: {fileID: 21300000, guid: 43d8b9e2f78519b489e89482bb729f8b, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 0.05
-    actualValue: 96.135185
+    depressionRate: 1
+    actualValue: 28.36273
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 0.03
-    actualValue: 97.68114
+    depressionRate: 1
+    actualValue: 28.36273
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 0.001
-    actualValue: 99.883026
+    depressionRate: 1
+    actualValue: 28.36273
   - statName: MORAL
     maxValue: 100
     depressionRate: 1
-    actualValue: 22.701931
-  traits: []
+    actualValue: 28.36273
+  traits:
+  - '"FUNNY"'
+  - DEVELOPER
+  - MASCOT

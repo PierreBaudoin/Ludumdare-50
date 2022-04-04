@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Room : MonoBehaviour
 {
     public int numberOfSlots;
+    public RoomManager roomManager;
+    public TextMeshProUGUI slotText;
     public Transform[] slotsTransform;
     public GameObject[] toActivateWhenVisible;
     public GameObject[] toDeactivateWhenVisible;
@@ -85,6 +88,7 @@ public class Room : MonoBehaviour
             {
                 result = tr;
                 validPositions[tr] = character;
+                //slotText.text = this.GetNumberOfFilledSlots() + "/" + this.numberOfSlots;
                 return result;
             }
         }
@@ -103,6 +107,11 @@ public class Room : MonoBehaviour
             }
         }
         validPositions[bite] = null;
+        slotText.text = this.GetNumberOfFilledSlots() + "/" + this.numberOfSlots;
+    }
+
+    public void OnClick (){
+        roomManager.LightOn(this);
     }
 
     public virtual void UseRoomUpdate(Character character)

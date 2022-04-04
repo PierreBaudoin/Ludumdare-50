@@ -78,7 +78,7 @@ public class InfobulleSpawner : MonoBehaviour
         if (infobulleOn)
         {
             Debug.Log("Removing infobulle");
-            Timer t = new Timer(0.25f, hide);
+            Timer t = new Timer(0.05f, hide);
             t.Play();
             //hide();
             infobulleOn = false;

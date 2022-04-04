@@ -7,6 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public RectTransform mainCanvas;
     public Slider scoreSlider;
     public GameObject background;
     public RectTransform bulletTraget;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameTimetxt;
     public Workingroom workingroom;
     public GameObject arrow;
+    public float timeScale = 10.0f;
     private float gameTimerfloat = 2880;
     private int hour;
     private int minute;
@@ -42,25 +44,27 @@ public class GameManager : MonoBehaviour
     }
     void Update (){
         if (gameTimerfloat >= 0){
-            gameTimerfloat -= Time.deltaTime * 5;
+            gameTimerfloat -= Time.deltaTime * timeScale;
         }
 
         hour = Mathf.FloorToInt(gameTimerfloat/60);
         minute = Mathf.FloorToInt(gameTimerfloat % 60);
         gameTimetxt.text = hour + "H " + minute;
 
+//----------------------------------------------------------------------
         float totalProductivity = 0;
         foreach(Character chara in characters){
             totalProductivity += workingroom.GetProductivity(chara);
         }
+        //Debug.Log ("prod1 : " + totalProductivity);
         totalProductivity /= characters.Count;
-
-        if (totalProductivity >= 75){
-            if (!arrow.active){
+        //Debug.Log ("prod : " + totalProductivity);
+        if (totalProductivity >= .75f){
+            if (!arrow.activeInHierarchy){
                 arrow.SetActive(true);
             }
         } else {
-                if (arrow.active){
+                if (arrow.activeInHierarchy){
                 arrow.SetActive(false);
             }
         }

@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e57f12ea16b98734a96371244ae9284e, type: 3}
-  m_Name: chara2
+  m_Name: morgane
   m_EditorClassIdentifier: 
-  characterName: Sebastien
-  description: War machine
-  postIt: {fileID: 21300000, guid: 8b030c6dc6ff43b4a94c6c1abae69bcc, type: 3}
-  profilePic: {fileID: 21300000, guid: 43d8b9e2f78519b489e89482bb729f8b, type: 3}
+  characterName: Morgane
+  description: Witch
+  postIt: {fileID: 21300000, guid: c596f52aaa97b7449ad6d9fb257de125, type: 3}
+  profilePic: {fileID: 21300000, guid: 83ac455e4f49f694385486f37e5280a6, type: 3}
   stats:
   - statName: HUNGER
     maxValue: 100
-    depressionRate: 0.1
-    actualValue: 96.21077
+    depressionRate: 0.25
+    actualValue: 28.36273
   - statName: FATIGUE
     maxValue: 100
-    depressionRate: 0.01
-    actualValue: 99.62267
+    depressionRate: 1.5
+    actualValue: 28.36273
   - statName: HYGIENE
     maxValue: 100
-    depressionRate: 0.001
-    actualValue: 99.94762
+    depressionRate: 0.5
+    actualValue: 28.36273
   - statName: MORAL
     maxValue: 100
-    depressionRate: 1
-    actualValue: 52.10809
-  traits: []
+    depressionRate: 2
+    actualValue: 28.36273
+  traits:
+  - ARTIST
+  - ANGER
+  - WEED USER

@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class ScoreBullet : MonoBehaviour
 {
     public float velocity;
-    private RectTransform rect, target;
+    public RectTransform rect;
+    private RectTransform target;
+    private Vector3 rectTargetPosition;
     Workingroom room;
     private Image image;
     private float timer;
-    public float phase1 = 0.2f;
-    public float phase2 = 1.5f;
+    private float phase2 = 3f;
 
     void Awake()
     {
@@ -22,32 +23,31 @@ public class ScoreBullet : MonoBehaviour
     {
         this.room = room;
         rect.position =  Camera.main.WorldToScreenPoint(position);
+        rectTargetPosition = Camera.main.WorldToScreenPoint(target.transform.position);
         timer = 0;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
-        GoToScoreBar();
+        if (timer <= phase2)
+            GoToScoreBar();
     }
-
     
-    void GoUp ()
-    {
+    void GoUp (){
         this.transform.position += transform.up.normalized * velocity/2 * Time.deltaTime;
-        
     }
 
 
     void GoToScoreBar() {
-        if(Mathf.Abs(rect.position.x - target.position.x + rect.position.y - target.position.y) <= 5f)
+        if(Mathf.Abs(rect.position.x - rectTargetPosition.x + rect.position.y - rectTargetPosition.y) <= 5f)
         {
             GameManager.instance.Score(5);
             room.PoolInBullet(this);
         }
         else
         {
-            Vector3 direction = target.transform.position - rect.transform.position;
+            Vector3 direction = rectTargetPosition - this.transform.position;
             this.transform.position += direction.normalized * velocity * Time.deltaTime;
         }
     }
