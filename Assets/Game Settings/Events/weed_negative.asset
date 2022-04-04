@@ -16,8 +16,8 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: 'Bad trip : One WEED USER sneaked out and came back DEMORALIZED
-    and TIRED. Your productivity took a big hit. '
+  textToDisplay: 'Bad trip : c1 sneaked out and came back DEMORALIZED and TIRED.
+    Your productivity took a big hit. '
   possibleTriggers:
   - triggerType: 0
     conditionsStats:

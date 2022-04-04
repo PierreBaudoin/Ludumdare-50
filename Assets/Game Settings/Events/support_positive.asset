@@ -16,8 +16,8 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: 'Little Attentions : A SUPPORT character took care of somebody,
-    this jammer got a snack and somehow smell better.'
+  textToDisplay: 'Little Attentions : c1 took care of c2, this jammer got a snack
+    and somehow smell better.'
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
