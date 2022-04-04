@@ -91,10 +91,6 @@ public class GameManager : MonoBehaviour
         //background.GetComponent<Animation>().Play();
         score += bulletValue;
         scoreSlider.value = score;
-        if(scoreSlider.value == scoreSlider.maxValue)
-        {
-            //gameTimerfloat = 0f;
-        }
     }
 
     public void StartGame()
@@ -119,5 +115,6 @@ public class GameManager : MonoBehaviour
         float normalizedScore = score / scoreSlider.maxValue;
         gameOverScreen.StartGameOverSequence(normalizedScore);
         SoundManager2D.StartMenuMusic();
+        isStarted = false;
     }
 }
