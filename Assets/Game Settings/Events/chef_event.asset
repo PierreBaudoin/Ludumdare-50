@@ -16,7 +16,8 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: Good meal
+  textToDisplay: 'Good meal : One Chef cooked for everyone ! HUNGER is not a problem
+    for now. '
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
@@ -32,4 +33,4 @@ MonoBehaviour:
   - targetingRule: 3
     statBonusEffects:
     - statName: HUNGER
-      statBonus: 20
+      statBonus: 30

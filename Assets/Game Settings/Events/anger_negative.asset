@@ -16,7 +16,8 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: Insults
+  textToDisplay: 'Insults : One intense character yield at another jammer. This one
+    may need some time to recover some MORAL. '
   possibleTriggers:
   - triggerType: 0
     conditionsStats:

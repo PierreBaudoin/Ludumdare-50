@@ -16,7 +16,7 @@ MonoBehaviour:
   useInGame: 1
   useOncePerGame: 1
   chance: 1
-  textToDisplay: Cheers !
+  textToDisplay: 'Cheers ! One MASCOT checked on everybody and raised their MORAL. '
   possibleTriggers:
   - triggerType: 0
     conditionsStats:
