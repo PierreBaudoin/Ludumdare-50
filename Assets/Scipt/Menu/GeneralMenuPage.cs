@@ -5,8 +5,8 @@ using UnityEngine.AddressableAssets;
 
 public class GeneralMenuPage : MenuPage
 {
-    public AssetReference optionPageGameObject, leavePageGameObject, gameScene, draftScene;
-    private GameObject option, leave;
+    public AssetReference optionPageGameObject, leavePageGameObject, creditPageGameObject, gameScene, draftScene;
+    private GameObject option, leave, credits;
     public void ClickPlay()
     {
         Addressables.LoadSceneAsync(draftScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
@@ -21,6 +21,18 @@ public class GeneralMenuPage : MenuPage
         else
         {
             Addressables.LoadAssetAsync<GameObject>(optionPageGameObject).Completed += OnOptionLoaded;
+        }
+    }
+
+    public void ClickCredits()
+    {
+        if(credits != null)
+        {
+            MenuManager.instance.SwapToPage(credits.GetComponent<MenuPage>());
+        }
+        else
+        {
+            Addressables.LoadAssetAsync<GameObject>(creditPageGameObject).Completed += OnCreditsLoaded;
         }
     }
 
@@ -49,5 +61,12 @@ public class GeneralMenuPage : MenuPage
         GameObject g = gameObjectOperationHandle.Result;
         leave = Instantiate(g, transform.parent);
         MenuManager.instance.SwapToPage(leave.GetComponent<MenuPage>());
+    }
+
+    public void OnCreditsLoaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<GameObject> gameObjectOperationHandle)
+    {
+        GameObject g = gameObjectOperationHandle.Result;
+        credits = Instantiate(g, transform.parent);
+        MenuManager.instance.SwapToPage(credits.GetComponent<MenuPage>());
     }
 }

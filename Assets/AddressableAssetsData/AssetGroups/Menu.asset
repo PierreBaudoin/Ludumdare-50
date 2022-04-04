@@ -33,6 +33,10 @@ MonoBehaviour:
     m_Address: LanguageSelectionView
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: a1ab5945d2e7c1b4e8cb1bb1c12df802
+    m_Address: Credit Page
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 37b3aeb83e299584bb391ac29fbcf0b7, type: 2}
   m_SchemaSet:

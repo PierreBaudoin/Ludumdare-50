@@ -84,6 +84,11 @@
       "key": "OK",
       "eng": "OK",
       "fra": "OK"
+    },
+    "Credits": {
+      "key": "Credits",
+      "eng": "Credits",
+      "fra": "Crédits"
     }
   }
 }
