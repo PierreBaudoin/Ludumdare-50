@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         gameTimetxt.text = "48H";
     }
     void Update (){
-        if (gameTimerfloat >= 0){
+        if (gameTimerfloat > 0){
             gameTimerfloat -= Time.deltaTime * timeScale;
         }
         else
@@ -89,6 +89,10 @@ public class GameManager : MonoBehaviour
         //background.GetComponent<Animation>().Play();
         score += bulletValue;
         scoreSlider.value = score;
+        if(scoreSlider.value == scoreSlider.maxValue)
+        {
+            gameTimerfloat = 0f;
+        }
     }
 
     public void StartGame()
