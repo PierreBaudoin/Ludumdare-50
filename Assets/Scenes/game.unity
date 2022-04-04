@@ -24963,6 +24963,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Event Pop-up
       objectReference: {fileID: 0}
+    - target: {fileID: 40346057213987231, guid: 3dea0c403bc3e104c879093248477c46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dea0c403bc3e104c879093248477c46, type: 3}
 --- !u!224 &1556541920 stripped
@@ -24979,19 +24984,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 874392370}
     m_Modifications:
     - target: {fileID: 1637764549, guid: be276328fde71244580fbf0b1c59495b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1283688052}
     - target: {fileID: 1637764549, guid: be276328fde71244580fbf0b1c59495b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 1637764549, guid: be276328fde71244580fbf0b1c59495b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1637764549, guid: be276328fde71244580fbf0b1c59495b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6503890555022773889, guid: be276328fde71244580fbf0b1c59495b,
