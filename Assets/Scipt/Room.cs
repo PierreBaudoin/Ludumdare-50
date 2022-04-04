@@ -29,6 +29,8 @@ public class Room : MonoBehaviour
         }
         roomAnimator = GetComponent<Animator>();
         if (roomAnimator != null) hasAnimator = true;
+
+        slotText.text = this.GetNumberOfFilledSlots() + "/" + this.numberOfSlots;
     }
 
     public bool IsRoomFull()
@@ -86,7 +88,7 @@ public class Room : MonoBehaviour
             {
                 result = tr;
                 validPositions[tr] = character;
-                //slotText.text = this.GetNumberOfFilledSlots() + "/" + this.numberOfSlots;
+                slotText.text = this.GetNumberOfFilledSlots() + "/" + this.numberOfSlots;
                 return result;
             }
         }
