@@ -7,10 +7,16 @@ using System;
 public class ConditionTrait : Condition
 {
     public string traitName;
-
     public override bool IsValid(Character target)
     {
-        Debug.LogError("Not yet implemented");
+        foreach(string s in target.characterData.traits)
+        {
+            if(s == traitName)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 }

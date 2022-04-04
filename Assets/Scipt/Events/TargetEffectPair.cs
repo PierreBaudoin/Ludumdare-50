@@ -46,6 +46,10 @@ public class TargetEffectPair
                 case TargetingRule.RandomCharacter:
                 e.Play(new Character[] {GameManager.instance.characters[UnityEngine.Random.Range(0, GameManager.instance.characters.Count)]});
                 break;
+
+                case TargetingRule.AllCharacters:
+                    e.Play(MonoBehaviour.FindObjectsOfType<Character>());
+                break;
             }
         }
     }
@@ -65,5 +69,5 @@ public class TargetEffectPair
 
 public enum TargetingRule
 {
-    ThisCharacter, AdjacentCharacter, RandomCharacter
+    ThisCharacter, AdjacentCharacter, RandomCharacter, AllCharacters
 }
