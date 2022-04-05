@@ -28,6 +28,8 @@ public class EventManager : MonoBehaviour
 
         usedEffects = new List<DialogBoxEvent>();
         (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
+
+        ShuffleEvents();
     }
 
     void Update()
@@ -39,6 +41,16 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    private void ShuffleEvents()
+    {
+        for (int i = 0; i < dialogBoxEvents.Count; i++) {
+             DialogBoxEvent temp = dialogBoxEvents[i];
+             int randomIndex = Random.Range(i, dialogBoxEvents.Count);
+             dialogBoxEvents[i] = dialogBoxEvents[randomIndex];
+             dialogBoxEvents[randomIndex] = temp;
+         }
+    }
+
     public void SwapVariableLaunchEvent()
     {
         launchEvent = !launchEvent;
@@ -46,27 +58,23 @@ public class EventManager : MonoBehaviour
 
     private void CheckEvent()
     {
-        foreach (Character c in GameManager.instance.characters)
+        print("Event");
+        foreach (DialogBoxEvent d in dialogBoxEvents)
         {
-            foreach (DialogBoxEvent d in dialogBoxEvents)
+            foreach (Character c in GameManager.instance.characters)
             {
                 if (d.IsActive(c))
                 {
+                    print("Active" + d.name);
                     foreach (TargetEffectPair t in d.targetEffectPairs)
                     {
-                        if (usedEffects.Contains(d))
-                        {
-                            if (d.useOncePerGame == false)
-                            {
-                                //PlayDialogBoxEffect(d,c,t);
-                            }
-                        }
-                        else
+                        if (usedEffects.Contains(d) == false)
                         {
                             PlayDialogBoxEffect(d, c, t);
                             sourceCharacterName = c.characterData.characterName;
                             launchEvent = false;
                             (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
+                            return;
                         }
                     }
                 }
@@ -76,6 +84,7 @@ public class EventManager : MonoBehaviour
 
     private void PlayDialogBoxEffect(DialogBoxEvent d, Character target, TargetEffectPair t)
     {
+        Debug.Log(d + " -- " + target.characterData.name);
         affectedCharacterName = target.characterData.characterName;
         t.Play(target);
         DisplayEvent(d);

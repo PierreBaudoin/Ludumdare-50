@@ -16,7 +16,7 @@ public class DialogBoxEvent : ScriptableObject
     
     public bool IsActive(Character target)
     {
-        foreach(TriggerCondition t in possibleTriggers)
+        /*foreach(TriggerCondition t in possibleTriggers)
         {
             if(t.triggerType == TriggerCondition.TriggerType.AND)
             {
@@ -27,6 +27,18 @@ public class DialogBoxEvent : ScriptableObject
                 return CheckOR(t.conditionsStats, target) || CheckOR(t.conditionsTraits, target);
             }
         }
+        return false;*/
+
+        foreach(TriggerCondition t in possibleTriggers)
+        {
+            if(t.isActive(target) == true)
+            {
+                return true;
+            }
+        }
+
+
+
         return false;
     }
 

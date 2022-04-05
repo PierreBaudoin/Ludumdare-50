@@ -14759,7 +14759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &874392367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15528,8 +15528,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.85090816, g: 1, b: 0, a: 1}
-  m_Intensity: 0
+  m_Color: {r: 0.5268779, g: 0.5382738, b: 0.6037736, a: 1}
+  m_Intensity: 0.23
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -15571,7 +15571,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1.08
+  m_BounceIntensity: 1.73
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -21533,6 +21533,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 43657ccefd48f1f4aa863d5136cc4230, type: 2}
   - {fileID: 11400000, guid: bcd75c1a836891c4fac7872e5701f265, type: 2}
   - {fileID: 11400000, guid: 08cee0d2d921ec44f922b5f15bc4a668, type: 2}
+  - {fileID: 11400000, guid: ece0ade5730dc2640a8ae5cb8171ad40, type: 2}
+  - {fileID: 11400000, guid: 2cb5e4dee5ce1fe4cbf5321568862e75, type: 2}
+  - {fileID: 11400000, guid: 4dc678380197b4442aa52e6bce645c3e, type: 2}
+  - {fileID: 11400000, guid: 7cf45f11a0ed1db45920e1825c74442a, type: 2}
   timeScale: 20
 --- !u!4 &1283688053
 Transform:
