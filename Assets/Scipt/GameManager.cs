@@ -97,10 +97,13 @@ public class GameManager : MonoBehaviour
     {
         isStarted = true;
 
-        foreach(CharacterData c in characterdata)
+        for(int i = 0; i < 6; i++)
         {
             GameObject g = Instantiate(characterPrefab, characterParent);
-            g.GetComponent<Character>().characterData = c;
+
+            int rand = Random.Range(0, characterdata.Count);
+            g.GetComponent<Character>().characterData = characterdata[rand];
+            characterdata.RemoveAt(rand);
         }
     }
 
