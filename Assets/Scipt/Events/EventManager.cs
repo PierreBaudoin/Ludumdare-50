@@ -28,6 +28,8 @@ public class EventManager : MonoBehaviour
 
         usedEffects = new List<DialogBoxEvent>();
         (new Timer(Random.Range(minTimerBetweenEvent, maxTimerBetweenEvent), SwapVariableLaunchEvent)).Play();
+
+        ShuffleEvents();
     }
 
     void Update()
@@ -39,6 +41,16 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    private void ShuffleEvents()
+    {
+        for (int i = 0; i < dialogBoxEvents.Count; i++) {
+             DialogBoxEvent temp = dialogBoxEvents[i];
+             int randomIndex = Random.Range(i, dialogBoxEvents.Count);
+             dialogBoxEvents[i] = dialogBoxEvents[randomIndex];
+             dialogBoxEvents[randomIndex] = temp;
+         }
+    }
+
     public void SwapVariableLaunchEvent()
     {
         launchEvent = !launchEvent;
@@ -47,9 +59,9 @@ public class EventManager : MonoBehaviour
     private void CheckEvent()
     {
         print("Event");
-        foreach (Character c in GameManager.instance.characters)
+        foreach (DialogBoxEvent d in dialogBoxEvents)
         {
-            foreach (DialogBoxEvent d in dialogBoxEvents)
+            foreach (Character c in GameManager.instance.characters)
             {
                 if (d.IsActive(c))
                 {
