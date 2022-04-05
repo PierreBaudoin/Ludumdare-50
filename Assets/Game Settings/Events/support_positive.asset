@@ -30,7 +30,7 @@ MonoBehaviour:
     conditionsTraits:
     - traitName: SUPPORT
   targetEffectPairs:
-  - targetingRule: 3
+  - targetingRule: 2
     statBonusEffects:
     - statName: HUNGER
       statBonus: 10
